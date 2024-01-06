@@ -9,6 +9,7 @@ import UIKit
 
 class ShoppingTableViewCell: UITableViewCell {
 
+    @IBOutlet var view: UIView!
     @IBOutlet var checkButton: UIButton!
     @IBOutlet var shoppingListLabel: UILabel!
     @IBOutlet var likeButton: UIButton!

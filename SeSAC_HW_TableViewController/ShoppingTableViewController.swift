@@ -19,12 +19,12 @@ class ShoppingTableViewController: UITableViewController {
         
         textField(shoppingTextField)
         add(addButton)
+            
     }
     
     //Mark: - 텍스트필드 디자인
     func textField(_ sender: UITextField) {
         sender.placeholder = "무엇을 구매하실 건가요?"
-        // 아래 패딩주기
         // 섹션마다 간격 주기
         sender.backgroundColor = .systemGray6
         sender.layer.cornerRadius = 10
@@ -46,6 +46,11 @@ class ShoppingTableViewController: UITableViewController {
         tableView.reloadData()
     }
     
+    //Mark: - section 위 여백
+    override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 24
+    }
+    
     //Mark: - check 버튼
     // 다시 누르면 체크 안된 상태로 돌아가기
     @IBAction func checkButtonClicked(_ sender: UIButton) {
@@ -57,7 +62,6 @@ class ShoppingTableViewController: UITableViewController {
     @IBAction func likeButtonClicked(_ sender: UIButton) {
         sender.setImage(UIImage(systemName: "star.fill"), for: .normal)
     }
-    
     
     //Mark: - 1. 셀 갯수
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -78,6 +82,8 @@ class ShoppingTableViewController: UITableViewController {
         cell.likeButton.setImage(UIImage(systemName: "star"), for: .normal)
         cell.likeButton.tintColor = .black
         cell.likeButton.setImage(UIImage(systemName: "star.fill"), for: .selected)
+    
+        cell.contentView.frame.inset(by: UIEdgeInsets(top: 16, left: 0, bottom: 16, right: 0))
         
         return cell
     }
