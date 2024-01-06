@@ -8,6 +8,7 @@
 import UIKit
 import SwiftUI
 
+// UserDefault 기능 추가하기 
 class ShoppingTableViewController: UITableViewController {
     
     @IBOutlet var shoppingTextField: UITextField!

@@ -22,11 +22,13 @@ class ShoppingTableViewCell: UITableViewCell {
     }
 
     //Mark: - 체크 버튼
+    // 다시 체크했을 때 돌아가기 기능
     @IBAction func checkButtonClicked(_ sender: UIButton) {
         sender.setImage(UIImage(systemName: "checkmark.square.fill"), for: .normal)
     }
     
     //Mark: - 찜 버튼
+    // 다시 체크했을 때 돌아가기 기능
     @IBAction func likeButtonClicked(_ sender: UIButton) {
         sender.setImage(UIImage(systemName: "star.fill"), for: .normal)
     }
