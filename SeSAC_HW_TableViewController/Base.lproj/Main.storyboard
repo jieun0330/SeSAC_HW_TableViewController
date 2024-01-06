@@ -277,44 +277,57 @@
                                     <rect key="frame" x="0.0" y="0.0" width="353" height="34.333332061767578"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DHw-yO-3nG">
-                                            <rect key="frame" x="54" y="6.6666666666666679" width="42" height="21"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YMN-ig-JZR">
-                                            <rect key="frame" x="319" y="10" width="24" height="14.333333333333336"/>
-                                            <state key="normal" title="Button"/>
-                                            <buttonConfiguration key="configuration" style="plain" title=""/>
-                                            <connections>
-                                                <action selector="likeButtonClicked:" destination="uYA-MS-BgN" eventType="touchUpInside" id="aeD-FC-BBK"/>
-                                            </connections>
-                                        </button>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2OI-yW-Gvk">
-                                            <rect key="frame" x="10" y="10" width="24" height="14.333333333333336"/>
-                                            <state key="normal" title="Button"/>
-                                            <buttonConfiguration key="configuration" style="plain" title=""/>
-                                            <connections>
-                                                <action selector="checkButtonClicked:" destination="uYA-MS-BgN" eventType="touchUpInside" id="cNl-NL-b0a"/>
-                                            </connections>
-                                        </button>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FL9-sV-wo7">
+                                            <rect key="frame" x="0.0" y="0.0" width="353" height="34.333333333333336"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XkG-WD-0Yq">
+                                                    <rect key="frame" x="10" y="10" width="24" height="14.333333333333336"/>
+                                                    <state key="normal" title="Button"/>
+                                                    <buttonConfiguration key="configuration" style="plain" title=""/>
+                                                    <connections>
+                                                        <action selector="checkButtonClicked:" destination="Iod-fb-fM3" eventType="touchUpInside" id="P8L-Fz-pKR"/>
+                                                    </connections>
+                                                </button>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5ko-Ax-z4K">
+                                                    <rect key="frame" x="319" y="10" width="24" height="14.333333333333336"/>
+                                                    <state key="normal" title="Button"/>
+                                                    <buttonConfiguration key="configuration" style="plain" title=""/>
+                                                    <connections>
+                                                        <action selector="likeButtonClicked:" destination="Iod-fb-fM3" eventType="touchUpInside" id="kqy-J7-Sox"/>
+                                                    </connections>
+                                                </button>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rdk-zT-S5O">
+                                                    <rect key="frame" x="54" y="6.6666666666666679" width="42" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="5ko-Ax-z4K" secondAttribute="bottom" constant="10" id="GpU-XC-JPK"/>
+                                                <constraint firstItem="5ko-Ax-z4K" firstAttribute="top" secondItem="FL9-sV-wo7" secondAttribute="top" constant="10" id="J6H-CS-3sZ"/>
+                                                <constraint firstItem="XkG-WD-0Yq" firstAttribute="leading" secondItem="FL9-sV-wo7" secondAttribute="leading" constant="10" id="Ld3-ib-zcj"/>
+                                                <constraint firstItem="XkG-WD-0Yq" firstAttribute="top" secondItem="FL9-sV-wo7" secondAttribute="top" constant="10" id="RFL-u3-j4t"/>
+                                                <constraint firstAttribute="trailing" secondItem="5ko-Ax-z4K" secondAttribute="trailing" constant="10" id="XUx-yv-Qpj"/>
+                                                <constraint firstItem="Rdk-zT-S5O" firstAttribute="leading" secondItem="XkG-WD-0Yq" secondAttribute="trailing" constant="20" id="YUM-qo-Joc"/>
+                                                <constraint firstItem="Rdk-zT-S5O" firstAttribute="centerY" secondItem="FL9-sV-wo7" secondAttribute="centerY" id="eEe-n4-MQK"/>
+                                                <constraint firstAttribute="bottom" secondItem="XkG-WD-0Yq" secondAttribute="bottom" constant="10" id="iXX-S9-CaD"/>
+                                            </constraints>
+                                        </view>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstAttribute="trailing" secondItem="YMN-ig-JZR" secondAttribute="trailing" constant="10" id="GHd-64-tLv"/>
-                                        <constraint firstItem="DHw-yO-3nG" firstAttribute="centerY" secondItem="Ffi-m5-TN2" secondAttribute="centerY" id="NNU-U7-spT"/>
-                                        <constraint firstItem="DHw-yO-3nG" firstAttribute="leading" secondItem="2OI-yW-Gvk" secondAttribute="trailing" constant="20" id="UDD-bt-Jil"/>
-                                        <constraint firstItem="YMN-ig-JZR" firstAttribute="top" secondItem="Ffi-m5-TN2" secondAttribute="top" constant="10" id="fYX-Sn-1oL"/>
-                                        <constraint firstAttribute="bottom" secondItem="2OI-yW-Gvk" secondAttribute="bottom" constant="10" id="ffC-HZ-qFg"/>
-                                        <constraint firstAttribute="bottom" secondItem="YMN-ig-JZR" secondAttribute="bottom" constant="10" id="jZc-Kh-J7t"/>
-                                        <constraint firstItem="2OI-yW-Gvk" firstAttribute="leading" secondItem="Ffi-m5-TN2" secondAttribute="leading" constant="10" id="lx6-Ht-6AL"/>
-                                        <constraint firstItem="2OI-yW-Gvk" firstAttribute="top" secondItem="Ffi-m5-TN2" secondAttribute="top" constant="10" id="u53-HB-ydn"/>
+                                        <constraint firstAttribute="trailing" secondItem="FL9-sV-wo7" secondAttribute="trailing" id="AXS-cH-UMR"/>
+                                        <constraint firstItem="FL9-sV-wo7" firstAttribute="top" secondItem="Ffi-m5-TN2" secondAttribute="top" id="fdR-0g-wnO"/>
+                                        <constraint firstItem="FL9-sV-wo7" firstAttribute="leading" secondItem="Ffi-m5-TN2" secondAttribute="leading" id="stj-7M-TlK"/>
+                                        <constraint firstAttribute="bottom" secondItem="FL9-sV-wo7" secondAttribute="bottom" id="ydb-EM-dZS"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="checkButton" destination="2OI-yW-Gvk" id="0pB-n5-8rZ"/>
-                                    <outlet property="likeButton" destination="YMN-ig-JZR" id="Vcw-N8-8cX"/>
-                                    <outlet property="shoppingListLabel" destination="DHw-yO-3nG" id="4f8-Bd-c8w"/>
+                                    <outlet property="checkButton" destination="XkG-WD-0Yq" id="UH4-9D-xaE"/>
+                                    <outlet property="likeButton" destination="5ko-Ax-z4K" id="iZg-sp-DcS"/>
+                                    <outlet property="shoppingListLabel" destination="Rdk-zT-S5O" id="TNH-15-Nnt"/>
+                                    <outlet property="view" destination="FL9-sV-wo7" id="5L7-dM-hdk"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>

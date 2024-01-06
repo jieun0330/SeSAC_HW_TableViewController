@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SwiftUI
 
 class ShoppingTableViewController: UITableViewController {
     
@@ -19,10 +20,10 @@ class ShoppingTableViewController: UITableViewController {
         
         textField(shoppingTextField)
         add(addButton)
-            
+        
     }
     
-    //Mark: - 텍스트필드 디자인
+    //Mark: - TextField 디자인
     func textField(_ sender: UITextField) {
         sender.placeholder = "무엇을 구매하실 건가요?"
         // 섹션마다 간격 주기
@@ -32,7 +33,7 @@ class ShoppingTableViewController: UITableViewController {
         sender.leftViewMode = .always
     }
     
-    //Mark: - 아이템 추가 버튼 디자인
+    //Mark: - 쇼핑 리스트 추가 버튼 디자인
     func add(_ sender: UIButton) {
         sender.setTitle("추가", for: .normal)
         sender.backgroundColor = .systemGray5
@@ -40,27 +41,17 @@ class ShoppingTableViewController: UITableViewController {
         sender.setTitleColor(.black, for: .normal)
     }
     
-    //Mark: - 아이템 추가 버튼 기능
+    //Mark: - 쇼핑 리스트 추가 버튼
     @IBAction func itemAdded(_ sender: UIButton) {
         list.append(shoppingTextField.text!)
+        shoppingTextField.text = ""
+        view.endEditing(true)
         tableView.reloadData()
     }
     
-    //Mark: - section 위 여백
+    //Mark: - cell 위 여백
     override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 24
-    }
-    
-    //Mark: - check 버튼
-    // 다시 누르면 체크 안된 상태로 돌아가기
-    @IBAction func checkButtonClicked(_ sender: UIButton) {
-        sender.setImage(UIImage(systemName: "checkmark.square.fill"), for: .normal)
-    }
-    
-    //Mark: - 찜 버튼
-    // 다시 누르면 체크 안된 상태로 돌아가기
-    @IBAction func likeButtonClicked(_ sender: UIButton) {
-        sender.setImage(UIImage(systemName: "star.fill"), for: .normal)
     }
     
     //Mark: - 1. 셀 갯수
@@ -74,16 +65,15 @@ class ShoppingTableViewController: UITableViewController {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "ShoppingTableViewCell", for: indexPath) as! ShoppingTableViewCell
         
-        cell.backgroundColor = .systemGray6
+        cell.view.backgroundColor = .systemGray6
+        cell.view.layer.cornerRadius = 16
         cell.checkButton.setImage(UIImage(systemName: "checkmark.square"), for: .normal)
         cell.checkButton.tintColor = .black
-        cell.checkButton.setImage(UIImage(systemName: "checkmark.square.fill"), for: [.highlighted, .selected])
         cell.shoppingListLabel.text = list[indexPath.row]
         cell.likeButton.setImage(UIImage(systemName: "star"), for: .normal)
         cell.likeButton.tintColor = .black
-        cell.likeButton.setImage(UIImage(systemName: "star.fill"), for: .selected)
-    
-        cell.contentView.frame.inset(by: UIEdgeInsets(top: 16, left: 0, bottom: 16, right: 0))
+        //Mark: - cell 클릭 이벤트 색상 없애기
+        cell.selectionStyle = .none
         
         return cell
     }
@@ -91,7 +81,7 @@ class ShoppingTableViewController: UITableViewController {
     //Mark: - 3. 셀 높이
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         
-        return 44
+        return 80
     }
     
     //Mark: - 셀 삭제 기능

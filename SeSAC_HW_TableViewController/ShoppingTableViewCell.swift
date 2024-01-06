@@ -14,4 +14,20 @@ class ShoppingTableViewCell: UITableViewCell {
     @IBOutlet var shoppingListLabel: UILabel!
     @IBOutlet var likeButton: UIButton!
     
+    //Mark: - cell 사이 간격 주기
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        
+        contentView.frame = contentView.frame.inset(by: UIEdgeInsets(top: 4, left: 0, bottom: 4, right: 0))
+    }
+
+    //Mark: - 체크 버튼
+    @IBAction func checkButtonClicked(_ sender: UIButton) {
+        sender.setImage(UIImage(systemName: "checkmark.square.fill"), for: .normal)
+    }
+    
+    //Mark: - 찜 버튼
+    @IBAction func likeButtonClicked(_ sender: UIButton) {
+        sender.setImage(UIImage(systemName: "star.fill"), for: .normal)
+    }
 }
