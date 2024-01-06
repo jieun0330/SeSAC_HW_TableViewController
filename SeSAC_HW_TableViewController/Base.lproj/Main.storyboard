@@ -270,52 +270,29 @@
                             </constraints>
                         </view>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ShoppingTableViewCell" id="Iod-fb-fM3" customClass="ShoppingTableViewCell" customModule="SeSAC_HW_TableViewController" customModuleProvider="target">
-                                <rect key="frame" x="20" y="109.33333206176758" width="353" height="34.333332061767578"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ShoppingTableViewCell" textLabel="PiS-CP-5di" detailTextLabel="x5M-I5-7kj" style="IBUITableViewCellStyleValue1" id="Iod-fb-fM3" customClass="ShoppingTableViewCell" customModule="SeSAC_HW_TableViewController" customModuleProvider="target">
+                                <rect key="frame" x="20" y="109.33333206176758" width="353" height="43.666667938232422"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Iod-fb-fM3" id="Ffi-m5-TN2">
-                                    <rect key="frame" x="0.0" y="0.0" width="353" height="34.333332061767578"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="353" height="43.666667938232422"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V4Y-lN-kQb">
-                                            <rect key="frame" x="10" y="10" width="24" height="14.333333333333336"/>
-                                            <state key="normal" title="Button"/>
-                                            <buttonConfiguration key="configuration" style="plain" title=""/>
-                                            <connections>
-                                                <action selector="checkButtonClicked:" destination="uYA-MS-BgN" eventType="touchUpInside" id="yah-MY-xLD"/>
-                                            </connections>
-                                        </button>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tds-yB-3xo">
-                                            <rect key="frame" x="54" y="6.6666666666666679" width="42" height="21"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="PiS-CP-5di">
+                                            <rect key="frame" x="20" y="15" width="25" height="14.333333333333334"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="0.0"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q2f-rG-mJv">
-                                            <rect key="frame" x="319" y="10" width="24" height="14.333333333333336"/>
-                                            <state key="normal" title="Button"/>
-                                            <buttonConfiguration key="configuration" style="plain" title=""/>
-                                            <connections>
-                                                <action selector="likeButtonClicked:" destination="uYA-MS-BgN" eventType="touchUpInside" id="RWh-Pw-7mp"/>
-                                            </connections>
-                                        </button>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Detail" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="x5M-I5-7kj">
+                                            <rect key="frame" x="300.33333333333331" y="15" width="32.666666666666664" height="14.333333333333334"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="0.0"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                     </subviews>
-                                    <constraints>
-                                        <constraint firstItem="V4Y-lN-kQb" firstAttribute="top" secondItem="Ffi-m5-TN2" secondAttribute="top" constant="10" id="2KS-rZ-dCr"/>
-                                        <constraint firstAttribute="bottom" secondItem="V4Y-lN-kQb" secondAttribute="bottom" constant="10" id="6hE-sD-q3w"/>
-                                        <constraint firstAttribute="bottom" secondItem="q2f-rG-mJv" secondAttribute="bottom" constant="10" id="E1f-Je-6Uk"/>
-                                        <constraint firstAttribute="trailing" secondItem="q2f-rG-mJv" secondAttribute="trailing" constant="10" id="HXj-98-WcC"/>
-                                        <constraint firstItem="V4Y-lN-kQb" firstAttribute="leading" secondItem="Ffi-m5-TN2" secondAttribute="leading" constant="10" id="ThH-D9-RFr"/>
-                                        <constraint firstItem="tds-yB-3xo" firstAttribute="centerY" secondItem="Ffi-m5-TN2" secondAttribute="centerY" id="X0U-9V-Qgn"/>
-                                        <constraint firstItem="q2f-rG-mJv" firstAttribute="top" secondItem="Ffi-m5-TN2" secondAttribute="top" constant="10" id="XUE-J0-T19"/>
-                                        <constraint firstItem="tds-yB-3xo" firstAttribute="leading" secondItem="V4Y-lN-kQb" secondAttribute="trailing" constant="20" id="d8Y-gk-JNz"/>
-                                    </constraints>
                                 </tableViewCellContentView>
-                                <connections>
-                                    <outlet property="checkButton" destination="V4Y-lN-kQb" id="vWz-ye-03Y"/>
-                                    <outlet property="likeButton" destination="q2f-rG-mJv" id="mte-d3-MXI"/>
-                                    <outlet property="shoppingListLabel" destination="tds-yB-3xo" id="cMA-BB-qQc"/>
-                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <sections/>
