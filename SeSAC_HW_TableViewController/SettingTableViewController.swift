@@ -24,6 +24,8 @@ class SettingTableViewController: UITableViewController {
         return 3
     }
     
+
+    
     // 1. 셀 갯수
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if section == 0 {

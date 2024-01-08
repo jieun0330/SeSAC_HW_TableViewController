@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="d0j-7v-8C6">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="uYA-MS-BgN">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
@@ -311,7 +311,7 @@
                                                 <constraint firstItem="XkG-WD-0Yq" firstAttribute="top" secondItem="FL9-sV-wo7" secondAttribute="top" constant="10" id="RFL-u3-j4t"/>
                                                 <constraint firstAttribute="trailing" secondItem="5ko-Ax-z4K" secondAttribute="trailing" constant="10" id="XUx-yv-Qpj"/>
                                                 <constraint firstItem="Rdk-zT-S5O" firstAttribute="leading" secondItem="XkG-WD-0Yq" secondAttribute="trailing" constant="20" id="YUM-qo-Joc"/>
-                                                <constraint firstItem="Rdk-zT-S5O" firstAttribute="centerY" secondItem="FL9-sV-wo7" secondAttribute="centerY" id="eEe-n4-MQK"/>
+                                                <constraint firstItem="Rdk-zT-S5O" firstAttribute="centerY" secondItem="FL9-sV-wo7" secondAttribute="centerY" id="aYV-uR-fIW"/>
                                                 <constraint firstAttribute="bottom" secondItem="XkG-WD-0Yq" secondAttribute="bottom" constant="10" id="iXX-S9-CaD"/>
                                             </constraints>
                                         </view>
