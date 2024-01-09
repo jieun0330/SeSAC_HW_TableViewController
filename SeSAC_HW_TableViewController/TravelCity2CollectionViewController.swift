@@ -49,4 +49,4 @@ class TravelCity2CollectionViewController: UICollectionViewController {
         
         return cell
     }
-=}
+}
