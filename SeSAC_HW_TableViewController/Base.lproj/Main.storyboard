@@ -567,7 +567,7 @@
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="wIy-M6-0JD" customClass="TravelCity2CollectionViewCell" customModule="SeSAC_HW_TableViewController" customModuleProvider="target">
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="TravelCity2CollectionViewCell" id="wIy-M6-0JD" customClass="TravelCity2CollectionViewCell" customModule="SeSAC_HW_TableViewController" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="127.99999999999997" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="Xdt-Po-EhT">
@@ -590,20 +590,20 @@
         <!--인기 도시3-->
         <scene sceneID="ClC-Cc-mNd">
             <objects>
-                <viewController id="IEy-SN-6nO" customClass="TravelCity3CollectionViewController" customModule="SeSAC_HW_TableViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="IEy-SN-6nO" customClass="TravelCity3ViewController" customModule="SeSAC_HW_TableViewController" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="WQZ-z8-2Lj">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bOn-Gu-pUH">
-                                <rect key="frame" x="0.0" y="59" width="393" height="1"/>
+                                <rect key="frame" x="0.0" y="103" width="393" height="1"/>
                                 <color key="backgroundColor" systemColor="opaqueSeparatorColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="1" id="bwN-7K-Isb"/>
                                 </constraints>
                             </view>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Q3Z-LW-Z2G">
-                                <rect key="frame" x="20" y="80" width="353" height="32"/>
+                                <rect key="frame" x="20" y="124" width="353" height="32"/>
                                 <segments>
                                     <segment title="First"/>
                                     <segment title="Second"/>
@@ -611,12 +611,8 @@
                                 </segments>
                             </segmentedControl>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="yrM-Gh-5bK">
-                                <rect key="frame" x="20" y="131" width="160" height="240"/>
+                                <rect key="frame" x="20" y="175" width="353" height="623"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="160" id="07D-kh-QsZ"/>
-                                    <constraint firstAttribute="height" constant="240" id="E8m-0a-fxS"/>
-                                </constraints>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="MTx-h4-faB">
                                     <size key="itemSize" width="128" height="128"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -624,8 +620,8 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="TravelCity3CollectionViewCell" id="erE-oN-joW">
-                                        <rect key="frame" x="16" y="0.0" width="128" height="128"/>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="TravelCity3CollectionViewCell" id="erE-oN-joW" customClass="TravelCity3CollectionViewCell" customModule="SeSAC_HW_TableViewController" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="P9A-wb-t4B">
                                             <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
@@ -639,8 +635,10 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="yrM-Gh-5bK" firstAttribute="top" secondItem="Q3Z-LW-Z2G" secondAttribute="bottom" constant="20" id="53H-vm-wx6"/>
+                            <constraint firstItem="gMl-ne-yH8" firstAttribute="bottom" secondItem="yrM-Gh-5bK" secondAttribute="bottom" constant="20" id="8eu-Xp-tar"/>
                             <constraint firstItem="gMl-ne-yH8" firstAttribute="trailing" secondItem="Q3Z-LW-Z2G" secondAttribute="trailing" constant="20" id="LXd-Hh-rXX"/>
                             <constraint firstItem="yrM-Gh-5bK" firstAttribute="leading" secondItem="gMl-ne-yH8" secondAttribute="leading" constant="20" id="NKN-tM-HwS"/>
+                            <constraint firstItem="gMl-ne-yH8" firstAttribute="trailing" secondItem="yrM-Gh-5bK" secondAttribute="trailing" constant="20" id="OSH-X4-aps"/>
                             <constraint firstItem="bOn-Gu-pUH" firstAttribute="top" secondItem="gMl-ne-yH8" secondAttribute="top" id="QAf-9K-vcR"/>
                             <constraint firstItem="gMl-ne-yH8" firstAttribute="trailing" secondItem="bOn-Gu-pUH" secondAttribute="trailing" id="TCQ-jj-kUA"/>
                             <constraint firstItem="Q3Z-LW-Z2G" firstAttribute="top" secondItem="bOn-Gu-pUH" secondAttribute="bottom" constant="20" id="e3j-T8-JcP"/>
@@ -649,6 +647,10 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="인기 도시3" id="VbN-A7-lZl"/>
+                    <connections>
+                        <outlet property="cityView" destination="yrM-Gh-5bK" id="4n1-e3-BLt"/>
+                        <outlet property="domesticSegment" destination="Q3Z-LW-Z2G" id="JDt-iO-Zm9"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="u4Y-Pu-9q7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -737,7 +739,7 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="91Q-6A-U21" kind="relationship" relationship="rootViewController" id="94S-4f-YTY"/>
+                        <segue destination="IEy-SN-6nO" kind="relationship" relationship="rootViewController" id="SfQ-QF-fd9"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mMO-FX-qpr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

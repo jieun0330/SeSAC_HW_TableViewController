@@ -9,7 +9,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="TravelCity3CollectionViewCell" customModule="SeSAC_HW_TableViewController" customModuleProvider="target">
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="TravelCity3CollectionViewCell" id="gTV-IL-0wX" customClass="TravelCity3CollectionViewCell" customModule="SeSAC_HW_TableViewController" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="252" height="371"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -28,6 +28,12 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wzb-ce-Z7q">
+                        <rect key="frame" x="0.0" y="283" width="252" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
             </view>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
@@ -35,11 +41,19 @@
                 <constraint firstItem="DIL-Ae-urJ" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="2kf-Dj-7TR"/>
                 <constraint firstItem="SQ6-Iq-llf" firstAttribute="top" secondItem="DIL-Ae-urJ" secondAttribute="bottom" constant="5" id="5T7-UR-Dco"/>
                 <constraint firstAttribute="trailing" secondItem="SQ6-Iq-llf" secondAttribute="trailing" id="7Lv-hc-QKt"/>
+                <constraint firstItem="wzb-ce-Z7q" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="CAA-Dn-I2m"/>
+                <constraint firstAttribute="trailing" secondItem="wzb-ce-Z7q" secondAttribute="trailing" id="Ccd-FJ-XZm"/>
                 <constraint firstItem="SQ6-Iq-llf" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="MhF-jA-dVh"/>
+                <constraint firstItem="wzb-ce-Z7q" firstAttribute="top" secondItem="SQ6-Iq-llf" secondAttribute="bottom" constant="5" id="NKc-1C-0lL"/>
                 <constraint firstAttribute="trailing" secondItem="DIL-Ae-urJ" secondAttribute="trailing" id="VQk-M1-Ndk"/>
                 <constraint firstItem="DIL-Ae-urJ" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="yIB-NN-Ny9"/>
             </constraints>
             <size key="customSize" width="252" height="371"/>
+            <connections>
+                <outlet property="cityLabel" destination="wzb-ce-Z7q" id="9nc-RM-jnB"/>
+                <outlet property="imageView" destination="DIL-Ae-urJ" id="czU-ht-C81"/>
+                <outlet property="titleLabel" destination="SQ6-Iq-llf" id="ltS-Lo-3un"/>
+            </connections>
             <point key="canvasLocation" x="141.98473282442748" y="133.45070422535213"/>
         </collectionViewCell>
     </objects>

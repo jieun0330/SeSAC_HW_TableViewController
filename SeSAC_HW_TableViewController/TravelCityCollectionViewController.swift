@@ -45,5 +45,4 @@ class TravelCityCollectionViewController: UICollectionViewController {
         return cell
     }
     
-    
 }

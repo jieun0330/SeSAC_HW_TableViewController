@@ -19,7 +19,6 @@ class TravelCityCollectionViewCell: UICollectionViewCell {
         imageView.contentMode = .scaleAspectFill
         imageView.layer.masksToBounds = false
         imageView.layer.cornerRadius = imageView.frame.height / 2
-//        print(imageView.frame.height) // 내가 140으로 줌
         imageView.clipsToBounds = true
         
         titleLabel.font = UIFont.boldSystemFont(ofSize: 16)
@@ -28,8 +27,5 @@ class TravelCityCollectionViewCell: UICollectionViewCell {
         cityLabel.textColor = .systemGray3
         cityLabel.numberOfLines = 2
         cityLabel.textAlignment = .center
-        
-    }
-    
-    
+    }    
 }
