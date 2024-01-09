@@ -550,7 +550,42 @@
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Eqw-tI-Fd2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1771.7557251908397" y="2885.9154929577467"/>
+            <point key="canvasLocation" x="1726" y="3038"/>
+        </scene>
+        <!--인기 도시2-->
+        <scene sceneID="Vcr-gq-d6x">
+            <objects>
+                <collectionViewController id="91Q-6A-U21" customClass="TravelCity2CollectionViewController" customModule="SeSAC_HW_TableViewController" customModuleProvider="target" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="DBq-os-f6y">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="FX4-OM-LyB">
+                            <size key="itemSize" width="128" height="128"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="wIy-M6-0JD">
+                                <rect key="frame" x="0.0" y="0.0" width="127.99999999999997" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="Xdt-Po-EhT">
+                                    <rect key="frame" x="0.0" y="0.0" width="127.99999999999997" height="128"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </collectionViewCellContentView>
+                            </collectionViewCell>
+                        </cells>
+                        <connections>
+                            <outlet property="dataSource" destination="91Q-6A-U21" id="mO6-v1-4bz"/>
+                            <outlet property="delegate" destination="91Q-6A-U21" id="jeo-Wk-BKg"/>
+                        </connections>
+                    </collectionView>
+                    <navigationItem key="navigationItem" title="인기 도시2" id="bRb-g7-YDU"/>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mlB-5w-UHF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1726" y="3699"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="ZiQ-sl-fD8">
@@ -635,12 +670,12 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="oCF-ij-gUe" kind="relationship" relationship="rootViewController" id="AlH-rI-UOa"/>
+                        <segue destination="91Q-6A-U21" kind="relationship" relationship="rootViewController" id="el3-8N-Pql"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mMO-FX-qpr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="847" y="2886"/>
+            <point key="canvasLocation" x="970" y="3252"/>
         </scene>
     </scenes>
     <resources>
