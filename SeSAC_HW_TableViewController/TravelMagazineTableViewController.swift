@@ -43,6 +43,8 @@ class TravelMagazineTableViewController: UITableViewController {
         cell.contentLabel.textColor = .gray
         cell.contentLabel.font = UIFont.boldSystemFont(ofSize: 12)
         //Mark: - 날짜
+        //Mark: - 하나만 가져다 쓰면 되는데, 여기다가 쓰면 100개의 칸을 만들게 되는 과정임
+        //Mark: - -> cell에 옮길 수 있음
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyMMdd"
         let convertDate = dateFormatter.date(from: mag.magazine[indexPath.row].date)
