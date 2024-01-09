@@ -23,6 +23,7 @@ class TravelCity2CollectionViewCell: UICollectionViewCell {
         imageView.clipsToBounds = true
         
         titleLabel.font = UIFont.boldSystemFont(ofSize: 16)
+        titleLabel.textAlignment = .center
         
         cityLabel.font = UIFont.boldSystemFont(ofSize: 12)
         cityLabel.textColor = .systemGray3
