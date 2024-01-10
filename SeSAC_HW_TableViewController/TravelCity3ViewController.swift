@@ -19,9 +19,8 @@ protocol XibRegisterable {
     func register(identifier: String)
 }
 
-class TravelCity3ViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, XibRegisterable {
+class TravelCity3ViewController: UIViewController, XibRegisterable {
     
-    //Mark: - XibRegisterable
     var identifier: String = "TravelCity3CollectionViewCell"
     func register(identifier: String) {
         let xib2 = UINib(nibName: identifier, bundle: nil)
@@ -56,20 +55,6 @@ extension TravelCity3ViewController {
         
     }
     
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return travel.city.count
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "TravelCity3CollectionViewCell", for: indexPath) as! TravelCity3CollectionViewCell
-        
-        cell.imageView.kf.setImage(with: URL(string: travel.city[indexPath.row].city_image))
-        cell.titleLabel.text = "\(travel.city[indexPath.row].city_name) | \(travel.city[indexPath.row].city_english_name)"
-        cell.cityLabel.text = travel.city[indexPath.row].city_explain
-        
-        return cell
-    }
-    
     func setLayout() {
         let layout = UICollectionViewFlowLayout()
         let spacing: CGFloat = 24
@@ -82,3 +67,20 @@ extension TravelCity3ViewController {
         cityView.collectionViewLayout = layout
     }
 }
+
+extension TravelCity3ViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return travel.city.count
+    }
+
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "TravelCity3CollectionViewCell", for: indexPath) as! TravelCity3CollectionViewCell
+        
+        cell.imageView.kf.setImage(with: URL(string: travel.city[indexPath.row].city_image))
+        cell.titleLabel.text = "\(travel.city[indexPath.row].city_name) | \(travel.city[indexPath.row].city_english_name)"
+        cell.cityLabel.text = travel.city[indexPath.row].city_explain
+        
+        return cell
+    }
+}
+
