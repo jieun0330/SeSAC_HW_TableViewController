@@ -585,7 +585,7 @@
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mlB-5w-UHF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2456" y="3545"/>
+            <point key="canvasLocation" x="2523" y="3307"/>
         </scene>
         <!--인기 도시3-->
         <scene sceneID="ClC-Cc-mNd">
@@ -627,6 +627,9 @@
                                             <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </collectionViewCellContentView>
+                                        <connections>
+                                            <segue destination="E3C-G6-S5Q" kind="show" id="qfd-vT-gOk"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
@@ -655,6 +658,16 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="u4Y-Pu-9q7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1773" y="4103"/>
+        </scene>
+        <!--Detail-->
+        <scene sceneID="qvs-hk-hWH">
+            <objects>
+                <viewControllerPlaceholder storyboardIdentifier="Detail" storyboardName="Detail" id="E3C-G6-S5Q" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="7D7-og-blI"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="I8f-3y-Dim" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2537" y="3973"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="ZiQ-sl-fD8">
@@ -739,7 +752,7 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="IEy-SN-6nO" kind="relationship" relationship="rootViewController" id="SfQ-QF-fd9"/>
+                        <segue destination="IEy-SN-6nO" kind="relationship" relationship="rootViewController" id="hhy-8t-saT"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mMO-FX-qpr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

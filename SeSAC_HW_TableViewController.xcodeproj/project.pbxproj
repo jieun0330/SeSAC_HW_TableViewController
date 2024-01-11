@@ -29,6 +29,13 @@
 		C293A61F2B48146F00B7D97B /* SettingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C293A61E2B48146F00B7D97B /* SettingTableViewController.swift */; };
 		C293A6212B481DD500B7D97B /* ShoppingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C293A6202B481DD500B7D97B /* ShoppingTableViewController.swift */; };
 		C293A6232B481F9200B7D97B /* ShoppingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C293A6222B481F9200B7D97B /* ShoppingTableViewCell.swift */; };
+		C2B3BDCA2B4FE8B2004A8E9A /* TravelModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2B3BDC92B4FE8B1004A8E9A /* TravelModel.swift */; };
+		C2B3BDD22B4FF182004A8E9A /* TravelDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2B3BDD12B4FF182004A8E9A /* TravelDetailViewController.swift */; };
+		C2B3BDD92B4FF1C6004A8E9A /* DetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2B3BDD72B4FF1C6004A8E9A /* DetailTableViewCell.swift */; };
+		C2B3BDDA2B4FF1C6004A8E9A /* DetailTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C2B3BDD82B4FF1C6004A8E9A /* DetailTableViewCell.xib */; };
+		C2B3BDDD2B4FF1D7004A8E9A /* ADTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2B3BDDB2B4FF1D7004A8E9A /* ADTableViewCell.swift */; };
+		C2B3BDDE2B4FF1D7004A8E9A /* ADTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C2B3BDDC2B4FF1D7004A8E9A /* ADTableViewCell.xib */; };
+		C2B3BDE22B4FFBDD004A8E9A /* Detail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C2B3BDE12B4FFBDD004A8E9A /* Detail.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -55,6 +62,13 @@
 		C293A61E2B48146F00B7D97B /* SettingTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTableViewController.swift; sourceTree = "<group>"; };
 		C293A6202B481DD500B7D97B /* ShoppingTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingTableViewController.swift; sourceTree = "<group>"; };
 		C293A6222B481F9200B7D97B /* ShoppingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingTableViewCell.swift; sourceTree = "<group>"; };
+		C2B3BDC92B4FE8B1004A8E9A /* TravelModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TravelModel.swift; sourceTree = "<group>"; };
+		C2B3BDD12B4FF182004A8E9A /* TravelDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelDetailViewController.swift; sourceTree = "<group>"; };
+		C2B3BDD72B4FF1C6004A8E9A /* DetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTableViewCell.swift; sourceTree = "<group>"; };
+		C2B3BDD82B4FF1C6004A8E9A /* DetailTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailTableViewCell.xib; sourceTree = "<group>"; };
+		C2B3BDDB2B4FF1D7004A8E9A /* ADTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ADTableViewCell.swift; sourceTree = "<group>"; };
+		C2B3BDDC2B4FF1D7004A8E9A /* ADTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ADTableViewCell.xib; sourceTree = "<group>"; };
+		C2B3BDE12B4FFBDD004A8E9A /* Detail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Detail.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,30 +102,86 @@
 		C293A6092B480B7C00B7D97B /* SeSAC_HW_TableViewController */ = {
 			isa = PBXGroup;
 			children = (
+				C2B3BDCB2B4FEA88004A8E9A /* 9회차 숙제 */,
+				C2B3BDCC2B4FEAAD004A8E9A /* Travel Magazine */,
+				C2B3BDCD2B4FEAC6004A8E9A /* Travel City */,
 				C293A60A2B480B7C00B7D97B /* AppDelegate.swift */,
 				C293A60C2B480B7C00B7D97B /* SceneDelegate.swift */,
 				C293A60E2B480B7C00B7D97B /* ViewController.swift */,
 				C293A6132B480B7E00B7D97B /* Assets.xcassets */,
 				C293A6152B480B7E00B7D97B /* LaunchScreen.storyboard */,
 				C293A6182B480B7E00B7D97B /* Info.plist */,
+				C293A6102B480B7C00B7D97B /* Main.storyboard */,
+			);
+			path = SeSAC_HW_TableViewController;
+			sourceTree = "<group>";
+		};
+		C2B3BDCB2B4FEA88004A8E9A /* 9회차 숙제 */ = {
+			isa = PBXGroup;
+			children = (
 				C293A61E2B48146F00B7D97B /* SettingTableViewController.swift */,
 				C293A6202B481DD500B7D97B /* ShoppingTableViewController.swift */,
 				C293A6222B481F9200B7D97B /* ShoppingTableViewCell.swift */,
+			);
+			name = "9회차 숙제";
+			path = "9회차 숙제";
+			sourceTree = "<group>";
+		};
+		C2B3BDCC2B4FEAAD004A8E9A /* Travel Magazine */ = {
+			isa = PBXGroup;
+			children = (
 				C26708932B4BEBFA0069223A /* MagazineInfo.swift */,
 				C26708952B4BF0C90069223A /* TravelMagazineTableViewController.swift */,
 				C26708972B4BF0F80069223A /* TravelMagazineTableViewCell.swift */,
+			);
+			path = "Travel Magazine";
+			sourceTree = "<group>";
+		};
+		C2B3BDCD2B4FEAC6004A8E9A /* Travel City */ = {
+			isa = PBXGroup;
+			children = (
+				C2B3BDC92B4FE8B1004A8E9A /* TravelModel.swift */,
 				C26708AF2B4D32280069223A /* CityInfo.swift */,
+				C2B3BDE02B4FF1FB004A8E9A /* Cell */,
+				C2B3BDDF2B4FF1EC004A8E9A /* View */,
+				C2B3BDCE2B4FEB15004A8E9A /* Practice */,
+				C2B3BDE12B4FFBDD004A8E9A /* Detail.storyboard */,
+			);
+			path = "Travel City";
+			sourceTree = "<group>";
+		};
+		C2B3BDCE2B4FEB15004A8E9A /* Practice */ = {
+			isa = PBXGroup;
+			children = (
 				C26708B52B4D33F90069223A /* TravelCityCollectionViewController.swift */,
 				C26708B72B4D34F50069223A /* TravelCityCollectionViewCell.swift */,
 				C26708B92B4D3EAD0069223A /* TravelCity2CollectionViewController.swift */,
 				C26708BB2B4D3F160069223A /* TravelCity2CollectionViewCell.swift */,
 				C26708BC2B4D3F160069223A /* TravelCity2CollectionViewCell.xib */,
-				C293A6102B480B7C00B7D97B /* Main.storyboard */,
+			);
+			path = Practice;
+			sourceTree = "<group>";
+		};
+		C2B3BDDF2B4FF1EC004A8E9A /* View */ = {
+			isa = PBXGroup;
+			children = (
 				C26708C92B4D5E610069223A /* TravelCity3ViewController.swift */,
+				C2B3BDD12B4FF182004A8E9A /* TravelDetailViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		C2B3BDE02B4FF1FB004A8E9A /* Cell */ = {
+			isa = PBXGroup;
+			children = (
 				C26708C52B4D5BD70069223A /* TravelCity3CollectionViewCell.swift */,
 				C26708C62B4D5BD70069223A /* TravelCity3CollectionViewCell.xib */,
+				C2B3BDD72B4FF1C6004A8E9A /* DetailTableViewCell.swift */,
+				C2B3BDD82B4FF1C6004A8E9A /* DetailTableViewCell.xib */,
+				C2B3BDDB2B4FF1D7004A8E9A /* ADTableViewCell.swift */,
+				C2B3BDDC2B4FF1D7004A8E9A /* ADTableViewCell.xib */,
 			);
-			path = SeSAC_HW_TableViewController;
+			path = Cell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -181,7 +251,10 @@
 				C293A6172B480B7E00B7D97B /* LaunchScreen.storyboard in Resources */,
 				C26708C82B4D5BD70069223A /* TravelCity3CollectionViewCell.xib in Resources */,
 				C293A6142B480B7E00B7D97B /* Assets.xcassets in Resources */,
+				C2B3BDE22B4FFBDD004A8E9A /* Detail.storyboard in Resources */,
 				C26708BE2B4D3F160069223A /* TravelCity2CollectionViewCell.xib in Resources */,
+				C2B3BDDA2B4FF1C6004A8E9A /* DetailTableViewCell.xib in Resources */,
+				C2B3BDDE2B4FF1D7004A8E9A /* ADTableViewCell.xib in Resources */,
 				C293A6122B480B7C00B7D97B /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -193,15 +266,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C2B3BDDD2B4FF1D7004A8E9A /* ADTableViewCell.swift in Sources */,
 				C26708BD2B4D3F160069223A /* TravelCity2CollectionViewCell.swift in Sources */,
 				C293A61F2B48146F00B7D97B /* SettingTableViewController.swift in Sources */,
 				C293A6232B481F9200B7D97B /* ShoppingTableViewCell.swift in Sources */,
+				C2B3BDCA2B4FE8B2004A8E9A /* TravelModel.swift in Sources */,
 				C26708CA2B4D5E610069223A /* TravelCity3ViewController.swift in Sources */,
 				C26708B02B4D32280069223A /* CityInfo.swift in Sources */,
 				C293A60F2B480B7C00B7D97B /* ViewController.swift in Sources */,
 				C26708B62B4D33F90069223A /* TravelCityCollectionViewController.swift in Sources */,
 				C26708962B4BF0C90069223A /* TravelMagazineTableViewController.swift in Sources */,
 				C26708C72B4D5BD70069223A /* TravelCity3CollectionViewCell.swift in Sources */,
+				C2B3BDD22B4FF182004A8E9A /* TravelDetailViewController.swift in Sources */,
 				C293A60B2B480B7C00B7D97B /* AppDelegate.swift in Sources */,
 				C26708942B4BEBFA0069223A /* MagazineInfo.swift in Sources */,
 				C293A6212B481DD500B7D97B /* ShoppingTableViewController.swift in Sources */,
@@ -209,6 +285,7 @@
 				C26708BA2B4D3EAD0069223A /* TravelCity2CollectionViewController.swift in Sources */,
 				C26708982B4BF0F80069223A /* TravelMagazineTableViewCell.swift in Sources */,
 				C26708B82B4D34F50069223A /* TravelCityCollectionViewCell.swift in Sources */,
+				C2B3BDD92B4FF1C6004A8E9A /* DetailTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

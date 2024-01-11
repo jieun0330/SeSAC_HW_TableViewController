@@ -14,4 +14,8 @@ class TravelMagazineTableViewCell: UITableViewCell {
     @IBOutlet var contentLabel: UILabel!
     @IBOutlet var dateLabel: UILabel!
     
+    override func awakeFromNib() {
+        super.awakeFromNib()
+    }
+    
 }

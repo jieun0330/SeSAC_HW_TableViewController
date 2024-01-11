@@ -14,19 +14,8 @@ enum domestic: String, CaseIterable {
     case overseas = "해외"
 }
 
-protocol XibRegisterable {
-    var identifier: String { get set }
-    func register(identifier: String)
-}
+class TravelCity3ViewController: UIViewController {
 
-class TravelCity3ViewController: UIViewController, XibRegisterable {
-    
-    var identifier: String = "TravelCity3CollectionViewCell"
-    func register(identifier: String) {
-        let xib2 = UINib(nibName: identifier, bundle: nil)
-        cityView.register(xib2, forCellWithReuseIdentifier: identifier)
-    }
-    
     @IBOutlet var cityView: UICollectionView!
     @IBOutlet var domesticSegment: UISegmentedControl!
     
@@ -35,8 +24,8 @@ class TravelCity3ViewController: UIViewController, XibRegisterable {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        register(identifier: identifier)
-        configureCollectionView()
+        setupSegmentControl()
+        configureView()
         setLayout()
     }
 }
@@ -49,10 +38,12 @@ extension TravelCity3ViewController {
         domesticSegment.selectedSegmentIndex = 0
     }
     
-    func configureCollectionView() {
+    func configureView() {
         cityView.delegate = self
         cityView.dataSource = self
         
+        let xib = UINib(nibName: TravelCity3CollectionViewCell.identifier, bundle: nil)
+        cityView.register(xib, forCellWithReuseIdentifier: TravelCity3CollectionViewCell.identifier)
     }
     
     func setLayout() {
@@ -66,6 +57,13 @@ extension TravelCity3ViewController {
         layout.minimumInteritemSpacing = spacing
         cityView.collectionViewLayout = layout
     }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let detailSB = UIStoryboard(name: "Detail", bundle: nil)
+        let detailVC = detailSB.instantiateViewController(identifier: "TravelDetailViewController") as! TravelDetailViewController
+        navigationController?.pushViewController(detailVC, animated: true)
+    }
+    
 }
 
 extension TravelCity3ViewController: UICollectionViewDelegate, UICollectionViewDataSource {
@@ -79,8 +77,11 @@ extension TravelCity3ViewController: UICollectionViewDelegate, UICollectionViewD
         cell.imageView.kf.setImage(with: URL(string: travel.city[indexPath.row].city_image))
         cell.titleLabel.text = "\(travel.city[indexPath.row].city_name) | \(travel.city[indexPath.row].city_english_name)"
         cell.cityLabel.text = travel.city[indexPath.row].city_explain
-        
+                
         return cell
     }
+    
+    
+    
 }
 

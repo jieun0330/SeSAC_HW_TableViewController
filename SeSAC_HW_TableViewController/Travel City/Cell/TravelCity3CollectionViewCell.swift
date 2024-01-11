@@ -13,13 +13,11 @@ class TravelCity3CollectionViewCell: UICollectionViewCell {
     @IBOutlet var titleLabel: UILabel!
     @IBOutlet var cityLabel: UILabel!
     
+    static let identifier = "TravelCity3CollectionViewCell"
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        configureUI()
-    }
-    
-    func configureUI() {
         imageView.contentMode = .scaleAspectFill
         imageView.layer.masksToBounds = false
         imageView.layer.cornerRadius = imageView.frame.height / 4
