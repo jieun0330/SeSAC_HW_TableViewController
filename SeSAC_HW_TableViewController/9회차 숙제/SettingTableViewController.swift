@@ -7,6 +7,39 @@
 
 import UIKit
 
+enum Setting: Int, CaseIterable {
+    case total
+    case personal
+    case others
+    case qna
+    
+    var title: String {
+        switch self {
+        case .total:
+            return "전체 설정"
+        case .personal:
+            return "개인 설정"
+        case .others:
+            return "기타"
+        case .qna:
+            return "Q&A"
+        }
+    }
+    
+    var cellData: [String] {
+        switch self {
+        case .total:
+            return ["공지사항", "실험실", "버전 정보"]
+        case .personal:
+            return ["개인/보안", "알림", "채팅", "멀티 프로필"]
+        case .others:
+            return ["도움말"]
+        case .qna:
+            return ["문의하기"]
+        }
+    }
+}
+
 class SettingTableViewController: UITableViewController {
     
     let entireSet = ["공지사항", "실험실", "버전 정보"]
@@ -15,38 +48,24 @@ class SettingTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
     }
     
-    // 섹션 개수
+//Mark: - section의 개수
     override func numberOfSections(in tableView: UITableView) -> Int {
-        return 3
+        //Mark: - section의 개수는 enum case의 개수
+        return Setting.allCases.count
     }
-    
-
-    
-    // 1. 셀 갯수
+        
+    // 각 section의 cell 갯수
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if section == 0 {
-            return 3
-        } else if section == 1 {
-            return 4
-        } else {
-            return 1
-        }
+        Setting.allCases[section].cellData.count
     }
-    
-    // 2. 셀 디자인 및 데이터 처리
+
+    // cell 구성
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "SettingTableViewCell")!
         
-        if indexPath.section == 0 {
-            cell.textLabel?.text = entireSet[indexPath.row]
-        } else if indexPath.section == 1 {
-            cell.textLabel?.text = personalSet[indexPath.row]
-        } else {
-            cell.textLabel?.text = etc[indexPath.row]
-        }
+        cell.textLabel?.text = Setting.allCases[indexPath.section].cellData[indexPath.row]
         
         return cell
     }
@@ -57,15 +76,8 @@ class SettingTableViewController: UITableViewController {
         return 44
     }
     
-    // 섹션 타이틀
+    // section의 헤더
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        if section == 0 {
-            return "전체 설정"
-        } else if section == 1 {
-            return "개인 설정"
-        } else {
-            return "기타"
-        }
-        
+        Setting.allCases[section].title
     }
 }
