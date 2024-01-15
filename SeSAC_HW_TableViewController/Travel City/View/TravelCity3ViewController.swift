@@ -34,6 +34,21 @@ class TravelCity3ViewController: UIViewController {
         configureView()
         setLayout()
     }
+    
+    @IBAction func changeSegmentValue(_ sender: UISegmentedControl) {
+        if sender.selectedSegmentIndex == 1 {
+            let domestic = travel.filter( { $0.domestic_travel })
+            list = domestic
+            print("국내:\(list.count)")
+        }
+        else if sender.selectedSegmentIndex == 2 {
+            let abroad = travel.filter( { !$0.domestic_travel })
+            list = abroad
+            print("해외:\(abroad)")
+        } else {
+            list = travel
+        }
+    }
 }
 
 extension TravelCity3ViewController: UISearchBarDelegate {
@@ -76,9 +91,15 @@ extension TravelCity3ViewController: UISearchBarDelegate {
 extension TravelCity3ViewController {
     
     func setupSegmentControl() {
+        //Mark: - 모든 segment들을 지워준다
         domesticSegment.removeAllSegments()
+        //Mark: - 미리 선언해둔 Enum에 접근.모든케이스.enumerated()는 모든 인덱스를 리턴해준다
+        //Mark: - 인덱스에 접근하여 세그먼트에 문자열을 insert해준다
         domestic.allCases.enumerated().forEach{ (index, section) in domesticSegment.insertSegment(withTitle: section.rawValue, at: index, animated: false)}
+        //Mark: - 초기 시작 상태를 0번째 인덱스로 두고 시작한다
         domesticSegment.selectedSegmentIndex = 0
+        //        if domesticSegment.section
+        //        print(segment)
     }
     
     func configureView() {
@@ -113,15 +134,16 @@ extension TravelCity3ViewController {
 
 extension TravelCity3ViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        print(list.count)
         return list.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TravelCity3CollectionViewCell.identifier, for: indexPath) as! TravelCity3CollectionViewCell
         
-        cell.imageView.kf.setImage(with: URL(string: travel[indexPath.row].city_image))
-        cell.titleLabel.text = "\(travel[indexPath.row].city_name) | \(travel[indexPath.row].city_english_name)"
-        cell.cityLabel.text = travel[indexPath.row].city_explain
+        cell.imageView.kf.setImage(with: URL(string: list[indexPath.row].city_image))
+        cell.titleLabel.text = "\(list[indexPath.row].city_name) | \(list[indexPath.row].city_english_name)"
+        cell.cityLabel.text = list[indexPath.row].city_explain
         
         return cell
     }
