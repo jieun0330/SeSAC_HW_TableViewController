@@ -44,7 +44,7 @@ extension TravelCity3ViewController: UISearchBarDelegate {
             list = travel
         } else {
             for item in travel {
-                if item.city_english_name.contains(searchBar.text!) {
+                if item.city_name.contains(searchBar.text!) || item.city_explain.contains(searchBar.text!) || item.city_english_name.contains(searchBar.text!) {
                     filterData.append(item)
                 }
             }
@@ -59,7 +59,7 @@ extension TravelCity3ViewController: UISearchBarDelegate {
             list = travel
         } else {
             for item in travel {
-                if item.city_english_name.contains(searchBar.text!) {
+                if item.city_name.contains(searchBar.text!) || item.city_explain.contains(searchBar.text!) || item.city_english_name.contains(searchBar.text!) {
                     filterData.append(item)
                 }
             }
