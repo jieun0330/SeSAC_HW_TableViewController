@@ -10,9 +10,9 @@ import Kingfisher
 
 private let reuseIdentifier = "Cell"
 
-class TravelCityCollectionViewController: UICollectionViewController {
+class TravelCityCollectionViewController: UICollectionViewController, ReusableProtocol {
     
-    let travel = CityInfo()
+    let travel = CityInfo.city
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,16 +31,16 @@ class TravelCityCollectionViewController: UICollectionViewController {
     
     // 1. 셀 갯수
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return travel.city.count
+        return travel.count
     }
     
     // 2. 셀 디자인 및 데이터 처리
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "TravelCityCollectionViewCell", for: indexPath) as! TravelCityCollectionViewCell
         
-        cell.imageView.kf.setImage(with: URL(string: travel.city[indexPath.row].city_image))
-        cell.titleLabel.text = "\(travel.city[indexPath.row].city_name) | \(travel.city[indexPath.row].city_english_name)"
-        cell.cityLabel.text = travel.city[indexPath.row].city_explain
+        cell.imageView.kf.setImage(with: URL(string: travel[indexPath.row].city_image))
+        cell.titleLabel.text = "\(travel[indexPath.row].city_name) | \(travel[indexPath.row].city_english_name)"
+        cell.cityLabel.text = travel[indexPath.row].city_explain
         
         return cell
     }

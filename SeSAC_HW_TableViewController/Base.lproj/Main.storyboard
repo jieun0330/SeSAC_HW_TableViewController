@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="iiD-sU-UZR">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="g89-2s-QzB">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
@@ -637,7 +637,7 @@
                                 </constraints>
                             </view>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Q3Z-LW-Z2G">
-                                <rect key="frame" x="20" y="124" width="353" height="32"/>
+                                <rect key="frame" x="20" y="164" width="353" height="32"/>
                                 <segments>
                                     <segment title="First"/>
                                     <segment title="Second"/>
@@ -645,7 +645,7 @@
                                 </segments>
                             </segmentedControl>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="yrM-Gh-5bK">
-                                <rect key="frame" x="20" y="175" width="353" height="623"/>
+                                <rect key="frame" x="20" y="215" width="353" height="583"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="MTx-h4-faB">
                                     <size key="itemSize" width="128" height="128"/>
@@ -667,6 +667,13 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="YOX-Ev-Psu">
+                                <rect key="frame" x="0.0" y="103" width="393" height="56"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="IEy-SN-6nO" id="3gZ-As-2HS"/>
+                                </connections>
+                            </searchBar>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="gMl-ne-yH8"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -674,17 +681,21 @@
                             <constraint firstItem="yrM-Gh-5bK" firstAttribute="top" secondItem="Q3Z-LW-Z2G" secondAttribute="bottom" constant="20" id="53H-vm-wx6"/>
                             <constraint firstItem="gMl-ne-yH8" firstAttribute="bottom" secondItem="yrM-Gh-5bK" secondAttribute="bottom" constant="20" id="8eu-Xp-tar"/>
                             <constraint firstItem="gMl-ne-yH8" firstAttribute="trailing" secondItem="Q3Z-LW-Z2G" secondAttribute="trailing" constant="20" id="LXd-Hh-rXX"/>
+                            <constraint firstItem="YOX-Ev-Psu" firstAttribute="leading" secondItem="gMl-ne-yH8" secondAttribute="leading" id="LXd-o4-dMV"/>
                             <constraint firstItem="yrM-Gh-5bK" firstAttribute="leading" secondItem="gMl-ne-yH8" secondAttribute="leading" constant="20" id="NKN-tM-HwS"/>
                             <constraint firstItem="gMl-ne-yH8" firstAttribute="trailing" secondItem="yrM-Gh-5bK" secondAttribute="trailing" constant="20" id="OSH-X4-aps"/>
                             <constraint firstItem="bOn-Gu-pUH" firstAttribute="top" secondItem="gMl-ne-yH8" secondAttribute="top" id="QAf-9K-vcR"/>
                             <constraint firstItem="gMl-ne-yH8" firstAttribute="trailing" secondItem="bOn-Gu-pUH" secondAttribute="trailing" id="TCQ-jj-kUA"/>
-                            <constraint firstItem="Q3Z-LW-Z2G" firstAttribute="top" secondItem="bOn-Gu-pUH" secondAttribute="bottom" constant="20" id="e3j-T8-JcP"/>
+                            <constraint firstItem="YOX-Ev-Psu" firstAttribute="top" secondItem="gMl-ne-yH8" secondAttribute="top" id="aVC-vL-pZz"/>
+                            <constraint firstItem="Q3Z-LW-Z2G" firstAttribute="top" secondItem="YOX-Ev-Psu" secondAttribute="bottom" constant="5" id="e3j-T8-JcP"/>
                             <constraint firstItem="Q3Z-LW-Z2G" firstAttribute="leading" secondItem="gMl-ne-yH8" secondAttribute="leading" constant="20" id="e9Q-MV-qnQ"/>
                             <constraint firstItem="bOn-Gu-pUH" firstAttribute="leading" secondItem="gMl-ne-yH8" secondAttribute="leading" id="lYN-ev-Ehk"/>
+                            <constraint firstItem="YOX-Ev-Psu" firstAttribute="trailing" secondItem="gMl-ne-yH8" secondAttribute="trailing" id="oRa-ja-PoN"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="인기 도시3" id="VbN-A7-lZl"/>
                     <connections>
+                        <outlet property="citySearchBar" destination="YOX-Ev-Psu" id="BgZ-Av-pmP"/>
                         <outlet property="cityView" destination="yrM-Gh-5bK" id="4n1-e3-BLt"/>
                         <outlet property="domesticSegment" destination="Q3Z-LW-Z2G" id="JDt-iO-Zm9"/>
                     </connections>

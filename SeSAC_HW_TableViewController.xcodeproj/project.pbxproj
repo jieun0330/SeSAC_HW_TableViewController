@@ -95,6 +95,14 @@
 			path = Protocol;
 			sourceTree = "<group>";
 		};
+		C263A85C2B550DD4006BB0E5 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				C26708932B4BEBFA0069223A /* MagazineInfo.swift */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
 		C293A5FE2B480B7C00B7D97B = {
 			isa = PBXGroup;
 			children = (
@@ -143,7 +151,7 @@
 		C2B3BDCC2B4FEAAD004A8E9A /* Travel Magazine */ = {
 			isa = PBXGroup;
 			children = (
-				C26708932B4BEBFA0069223A /* MagazineInfo.swift */,
+				C263A85C2B550DD4006BB0E5 /* Data */,
 				C26708952B4BF0C90069223A /* TravelMagazineTableViewController.swift */,
 				C26708972B4BF0F80069223A /* TravelMagazineTableViewCell.swift */,
 				C263A8522B54FB9E006BB0E5 /* MagazineDetailViewController.swift */,

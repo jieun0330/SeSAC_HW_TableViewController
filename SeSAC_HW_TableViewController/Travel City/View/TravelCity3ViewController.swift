@@ -15,11 +15,17 @@ enum domestic: String, CaseIterable {
 }
 
 class TravelCity3ViewController: UIViewController {
-
+    
     @IBOutlet var cityView: UICollectionView!
+    @IBOutlet var citySearchBar: UISearchBar!
     @IBOutlet var domesticSegment: UISegmentedControl!
     
-    let travel = CityInfo()
+    let travel = CityInfo.city
+    var list: [City] = CityInfo.city {
+        didSet {
+            cityView.reloadData()
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,6 +33,43 @@ class TravelCity3ViewController: UIViewController {
         setupSegmentControl()
         configureView()
         setLayout()
+    }
+}
+
+extension TravelCity3ViewController: UISearchBarDelegate {
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        var filterData: [City] = []
+        
+        if searchBar.text == "" {
+            list = travel
+        } else {
+            for item in travel {
+                if item.city_english_name.contains(searchBar.text!) {
+                    filterData.append(item)
+                }
+            }
+            list = filterData
+        }
+    }
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        var filterData: [City] = []
+        
+        if searchBar.text == "" {
+            list = travel
+        } else {
+            for item in travel {
+                if item.city_english_name.contains(searchBar.text!) {
+                    filterData.append(item)
+                }
+            }
+            list = filterData
+        }
+    }
+    
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.text = ""
+        list = travel
     }
 }
 
@@ -41,6 +84,9 @@ extension TravelCity3ViewController {
     func configureView() {
         cityView.delegate = self
         cityView.dataSource = self
+        
+        citySearchBar.delegate = self
+        citySearchBar.showsCancelButton = true
         
         let xib = UINib(nibName: TravelCity3CollectionViewCell.identifier, bundle: nil)
         cityView.register(xib, forCellWithReuseIdentifier: TravelCity3CollectionViewCell.identifier)
@@ -60,28 +106,23 @@ extension TravelCity3ViewController {
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let detailSB = UIStoryboard(name: "Detail", bundle: nil)
-        let detailVC = detailSB.instantiateViewController(identifier: "TravelDetailViewController") as! TravelDetailViewController
+        let detailVC = detailSB.instantiateViewController(identifier: TravelDetailViewController.identifier) as! TravelDetailViewController
         navigationController?.pushViewController(detailVC, animated: true)
     }
-    
 }
 
 extension TravelCity3ViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return travel.city.count
+        return list.count
     }
-
+    
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "TravelCity3CollectionViewCell", for: indexPath) as! TravelCity3CollectionViewCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TravelCity3CollectionViewCell.identifier, for: indexPath) as! TravelCity3CollectionViewCell
         
-        cell.imageView.kf.setImage(with: URL(string: travel.city[indexPath.row].city_image))
-        cell.titleLabel.text = "\(travel.city[indexPath.row].city_name) | \(travel.city[indexPath.row].city_english_name)"
-        cell.cityLabel.text = travel.city[indexPath.row].city_explain
-                
+        cell.imageView.kf.setImage(with: URL(string: travel[indexPath.row].city_image))
+        cell.titleLabel.text = "\(travel[indexPath.row].city_name) | \(travel[indexPath.row].city_english_name)"
+        cell.cityLabel.text = travel[indexPath.row].city_explain
+        
         return cell
     }
-    
-    
-    
 }
-

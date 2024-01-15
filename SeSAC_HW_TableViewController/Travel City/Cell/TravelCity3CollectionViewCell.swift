@@ -7,7 +7,7 @@
 
 import UIKit
 
-class TravelCity3CollectionViewCell: UICollectionViewCell {
+class TravelCity3CollectionViewCell: UICollectionViewCell, ReusableProtocol {
     
     @IBOutlet var imageView: UIImageView!
     @IBOutlet var titleLabel: UILabel!

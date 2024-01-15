@@ -7,7 +7,7 @@
 
 import UIKit
 
-class DetailTableViewCell: UITableViewCell {
+class DetailTableViewCell: UITableViewCell, ReusableProtocol {
     
     @IBOutlet var title: UILabel!
     @IBOutlet var descriptionLabel: UILabel!

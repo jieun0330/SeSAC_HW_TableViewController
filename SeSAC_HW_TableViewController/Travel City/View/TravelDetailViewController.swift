@@ -8,7 +8,7 @@
 import UIKit
 import Kingfisher
 
-class TravelDetailViewController: UIViewController {
+class TravelDetailViewController: UIViewController, ReusableProtocol {
     
     @IBOutlet var travelDetailTableView: UITableView!
     
@@ -61,7 +61,7 @@ extension TravelDetailViewController: UITableViewDelegate, UITableViewDataSource
 
         
         if travelDetail.travel[indexPath.row].ad == false {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "DetailTableViewCell", for: indexPath) as! DetailTableViewCell
+            let cell = tableView.dequeueReusableCell(withIdentifier: DetailTableViewCell.identifier, for: indexPath) as! DetailTableViewCell
             
             cell.title.text = travelDetail.travel[indexPath.row].title
             cell.descriptionLabel.text = travelDetail.travel[indexPath.row].description
@@ -70,7 +70,7 @@ extension TravelDetailViewController: UITableViewDelegate, UITableViewDataSource
             return cell
             
         } else {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "ADTableViewCell", for: indexPath) as! ADTableViewCell
+            let cell = tableView.dequeueReusableCell(withIdentifier: ADTableViewCell.identifier, for: indexPath) as! ADTableViewCell
             
             cell.adTitleLabel.text = travelDetail.travel[indexPath.row].title
             

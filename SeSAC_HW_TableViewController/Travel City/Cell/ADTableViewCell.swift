@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ADTableViewCell: UITableViewCell {
+class ADTableViewCell: UITableViewCell, ReusableProtocol {
     
     @IBOutlet var adUIView: UIView!
     @IBOutlet var adTitleLabel: UILabel!
