@@ -21,7 +21,7 @@ class TravelMagazineTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-ㄴㄷㄴ
+        
         let vc = storyboard?.instantiateViewController(withIdentifier: "MagazineDetailViewController") as! MagazineDetailViewController
         
         vc.urlString = mag[indexPath.row].link
