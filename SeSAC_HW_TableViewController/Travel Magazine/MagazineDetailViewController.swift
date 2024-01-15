@@ -8,7 +8,7 @@
 import UIKit
 import WebKit
 
-class MagazineDetailViewController: UIViewController {
+class MagazineDetailViewController: UIViewController, ReusableProtocol {
     
     @IBOutlet var magazineDetailWebView: WKWebView!
     

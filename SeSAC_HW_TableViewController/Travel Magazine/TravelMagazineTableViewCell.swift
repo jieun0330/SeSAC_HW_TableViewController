@@ -7,7 +7,7 @@
 
 import UIKit
 
-class TravelMagazineTableViewCell: UITableViewCell {
+class TravelMagazineTableViewCell: UITableViewCell, ReusableProtocol {
     
     @IBOutlet var travelImageView: UIImageView!
     @IBOutlet var titleLabel: UILabel!

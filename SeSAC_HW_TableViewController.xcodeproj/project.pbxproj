@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		C263A8532B54FB9E006BB0E5 /* MagazineDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C263A8522B54FB9E006BB0E5 /* MagazineDetailViewController.swift */; };
+		C263A85B2B5509DF006BB0E5 /* Protocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = C263A85A2B5509DF006BB0E5 /* Protocol.swift */; };
 		C26708942B4BEBFA0069223A /* MagazineInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = C26708932B4BEBFA0069223A /* MagazineInfo.swift */; };
 		C26708962B4BF0C90069223A /* TravelMagazineTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C26708952B4BF0C90069223A /* TravelMagazineTableViewController.swift */; };
 		C26708982B4BF0F80069223A /* TravelMagazineTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C26708972B4BF0F80069223A /* TravelMagazineTableViewCell.swift */; };
@@ -41,6 +42,7 @@
 
 /* Begin PBXFileReference section */
 		C263A8522B54FB9E006BB0E5 /* MagazineDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MagazineDetailViewController.swift; sourceTree = "<group>"; };
+		C263A85A2B5509DF006BB0E5 /* Protocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Protocol.swift; sourceTree = "<group>"; };
 		C26708932B4BEBFA0069223A /* MagazineInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MagazineInfo.swift; sourceTree = "<group>"; };
 		C26708952B4BF0C90069223A /* TravelMagazineTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelMagazineTableViewController.swift; sourceTree = "<group>"; };
 		C26708972B4BF0F80069223A /* TravelMagazineTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelMagazineTableViewCell.swift; sourceTree = "<group>"; };
@@ -85,6 +87,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C263A8592B5509D1006BB0E5 /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				C263A85A2B5509DF006BB0E5 /* Protocol.swift */,
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
 		C293A5FE2B480B7C00B7D97B = {
 			isa = PBXGroup;
 			children = (
@@ -104,6 +114,7 @@
 		C293A6092B480B7C00B7D97B /* SeSAC_HW_TableViewController */ = {
 			isa = PBXGroup;
 			children = (
+				C263A8592B5509D1006BB0E5 /* Protocol */,
 				C2B3BDCB2B4FEA88004A8E9A /* 9회차 숙제 */,
 				C2B3BDCC2B4FEAAD004A8E9A /* Travel Magazine */,
 				C2B3BDCD2B4FEAC6004A8E9A /* Travel City */,
@@ -286,6 +297,7 @@
 				C26708942B4BEBFA0069223A /* MagazineInfo.swift in Sources */,
 				C293A6212B481DD500B7D97B /* ShoppingTableViewController.swift in Sources */,
 				C293A60D2B480B7C00B7D97B /* SceneDelegate.swift in Sources */,
+				C263A85B2B5509DF006BB0E5 /* Protocol.swift in Sources */,
 				C26708BA2B4D3EAD0069223A /* TravelCity2CollectionViewController.swift in Sources */,
 				C26708982B4BF0F80069223A /* TravelMagazineTableViewCell.swift in Sources */,
 				C26708B82B4D34F50069223A /* TravelCityCollectionViewCell.swift in Sources */,

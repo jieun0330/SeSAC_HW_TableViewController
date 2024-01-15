@@ -22,7 +22,7 @@ class TravelMagazineTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        let vc = storyboard?.instantiateViewController(withIdentifier: "MagazineDetailViewController") as! MagazineDetailViewController
+        let vc = storyboard?.instantiateViewController(withIdentifier: MagazineDetailViewController.identifier) as! MagazineDetailViewController
         
         vc.urlString = mag[indexPath.row].link
         navigationController?.pushViewController(vc, animated: true)
@@ -36,7 +36,7 @@ class TravelMagazineTableViewController: UITableViewController {
     // 2. 셀 디자인 및 데이터 처리
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "TravelMagazineTableViewCell", for: indexPath) as! TravelMagazineTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: TravelMagazineTableViewCell.identifier, for: indexPath) as! TravelMagazineTableViewCell
         
         //Mark: - 이미지
         cell.travelImageView.kf.setImage(with: URL(string: mag[indexPath.row].photo_image))
