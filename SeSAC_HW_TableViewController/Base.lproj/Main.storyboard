@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="g89-2s-QzB">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Xa3-XL-xeA">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
@@ -671,7 +671,7 @@
                                 </cells>
                             </collectionView>
                             <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="YOX-Ev-Psu">
-                                <rect key="frame" x="0.0" y="103" width="393" height="56"/>
+                                <rect key="frame" x="20" y="103" width="353" height="56"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
                                     <outlet property="delegate" destination="IEy-SN-6nO" id="3gZ-As-2HS"/>
@@ -684,7 +684,7 @@
                             <constraint firstItem="yrM-Gh-5bK" firstAttribute="top" secondItem="Q3Z-LW-Z2G" secondAttribute="bottom" constant="20" id="53H-vm-wx6"/>
                             <constraint firstItem="gMl-ne-yH8" firstAttribute="bottom" secondItem="yrM-Gh-5bK" secondAttribute="bottom" constant="20" id="8eu-Xp-tar"/>
                             <constraint firstItem="gMl-ne-yH8" firstAttribute="trailing" secondItem="Q3Z-LW-Z2G" secondAttribute="trailing" constant="20" id="LXd-Hh-rXX"/>
-                            <constraint firstItem="YOX-Ev-Psu" firstAttribute="leading" secondItem="gMl-ne-yH8" secondAttribute="leading" id="LXd-o4-dMV"/>
+                            <constraint firstItem="YOX-Ev-Psu" firstAttribute="leading" secondItem="gMl-ne-yH8" secondAttribute="leading" constant="20" id="LXd-o4-dMV"/>
                             <constraint firstItem="yrM-Gh-5bK" firstAttribute="leading" secondItem="gMl-ne-yH8" secondAttribute="leading" constant="20" id="NKN-tM-HwS"/>
                             <constraint firstItem="gMl-ne-yH8" firstAttribute="trailing" secondItem="yrM-Gh-5bK" secondAttribute="trailing" constant="20" id="OSH-X4-aps"/>
                             <constraint firstItem="bOn-Gu-pUH" firstAttribute="top" secondItem="gMl-ne-yH8" secondAttribute="top" id="QAf-9K-vcR"/>
@@ -693,7 +693,7 @@
                             <constraint firstItem="Q3Z-LW-Z2G" firstAttribute="top" secondItem="YOX-Ev-Psu" secondAttribute="bottom" constant="5" id="e3j-T8-JcP"/>
                             <constraint firstItem="Q3Z-LW-Z2G" firstAttribute="leading" secondItem="gMl-ne-yH8" secondAttribute="leading" constant="20" id="e9Q-MV-qnQ"/>
                             <constraint firstItem="bOn-Gu-pUH" firstAttribute="leading" secondItem="gMl-ne-yH8" secondAttribute="leading" id="lYN-ev-Ehk"/>
-                            <constraint firstItem="YOX-Ev-Psu" firstAttribute="trailing" secondItem="gMl-ne-yH8" secondAttribute="trailing" id="oRa-ja-PoN"/>
+                            <constraint firstItem="YOX-Ev-Psu" firstAttribute="trailing" secondItem="gMl-ne-yH8" secondAttribute="trailing" constant="-20" id="oRa-ja-PoN"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="인기 도시3" id="VbN-A7-lZl"/>

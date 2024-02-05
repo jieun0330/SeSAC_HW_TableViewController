@@ -42,30 +42,39 @@ enum Setting: String, CaseIterable {
 
 class SettingTableViewController: UITableViewController {
     
-    let entireSet = ["공지사항", "실험실", "버전 정보"]
-    let personalSet = ["개인/보안", "알림", "채팅", "멀티프로필"]
-    let etc = ["고객센터/도움말"]
-    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
     
-//Mark: - section의 개수
+// section의 개수
     override func numberOfSections(in tableView: UITableView) -> Int {
-        //Mark: - section의 개수는 enum case의 개수
+        // ection의 개수는 enum case의 개수
         return Setting.allCases.count
     }
         
     // 각 section의 cell 갯수
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        // Setting.allCases -> 4
+        // Setting.allCases[section].cellData
+        // Setting.allCases[0] -> total
+        // Setting.allCases[0].cellData -> 공지사항, 실험실, 버전 정보
+        // Setting.allCases[0].cellData.count -> 3개
+        // Setting.allCases[1].cellData -> 개인/보안, 알림, 채팅, 멀티 프로필 -> 4개
+        // 각 셀마다의 갯수를 설정할 수 있다
         Setting.allCases[section].cellData.count
     }
 
     // cell 구성
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "SettingTableViewCell")!
         
+        let cell = tableView.dequeueReusableCell(withIdentifier: "SettingTableViewCell")!
         cell.textLabel?.text = Setting.allCases[indexPath.section].cellData[indexPath.row]
+        // indexPath -> [0,0] [0,1] [0,2], [1,0] [1,1] [1,2] [1,3] ...
+        // indexPath.section -> 0,0,0 1,1,1,1 ...
+        // Setting.allCases[indexPath.section]
+        // Setting.allCases[0].cellData -> 공지사항, 실험실, 버전 정보
+        // Setting.allCases[0].cellData[indexPath.row]
+        // 그럼 각 section에 있는 각 cell의 이름을 따서 올 수 있다
         
         return cell
     }
