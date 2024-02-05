@@ -40,6 +40,7 @@ class TravelMagazineTableViewController: UITableViewController {
         
         //Mark: - 이미지
         cell.travelImageView.kf.setImage(with: URL(string: mag[indexPath.row].photo_image))
+//        cell.travelImageView.image = UIImage(systemName: "heart")
         cell.travelImageView.contentMode = .scaleAspectFill
         cell.travelImageView.layer.cornerRadius = 16
         //Mark: - 타이틀
