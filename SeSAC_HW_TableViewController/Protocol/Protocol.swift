@@ -7,17 +7,6 @@
 
 import UIKit
 
-//extension UIViewController {
-//    
-//    static var identifier: String {
-//        return String(describing: self)
-//    }
-//}
-//
-//extension UITableViewCell {
-//    
-//}
-
 protocol ReusableProtocol {
     static var identifier: String { get }
 }

@@ -7,7 +7,7 @@
 
 import UIKit
 
-enum Setting: Int, CaseIterable {
+enum Setting: String, CaseIterable {
     case total
     case personal
     case others

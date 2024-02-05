@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import SwiftUI
 
 struct shopping {
     var list: String
@@ -26,15 +25,15 @@ class ShoppingTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        textField(shoppingTextField)
-        add(addButton)
+        
+        textFieldDesign(shoppingTextField)
+        addButton(addButton)
         
         tableView.rowHeight = 80
     }
     
-    //Mark: - TextField 디자인
-    func textField(_ sender: UITextField) {
+    // TextField 디자인
+    func textFieldDesign(_ sender: UITextField) {
         sender.placeholder = "무엇을 구매하실 건가요?"
         sender.backgroundColor = .systemGray6
         sender.layer.cornerRadius = 10
@@ -42,32 +41,33 @@ class ShoppingTableViewController: UITableViewController {
         sender.leftViewMode = .always
     }
     
-    //Mark: - 쇼핑 리스트 추가 버튼 디자인
-    func add(_ sender: UIButton) {
+    // 추가 버튼 디자인
+    func addButton(_ sender: UIButton) {
         sender.setTitle("추가", for: .normal)
         sender.backgroundColor = .systemGray5
         sender.layer.cornerRadius = 5
         sender.setTitleColor(.black, for: .normal)
     }
     
-    //Mark: - 쇼핑 리스트 추가 버튼
+    // 쇼핑 리스트 추가 기능
     @IBAction func itemAdded(_ sender: UIButton) {
         shoppingList.append(shopping(list: shoppingTextField.text!, check: false, like: false))
+        shoppingTextField.text = ""
         view.endEditing(true)
         tableView.reloadData()
     }
     
-    //Mark: - cell 위 여백
+    // cell 위 여백
     override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 24
     }
     
-//    Mark: - 1. 셀 갯수
+    // 1. 셀 갯수
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return shoppingList.count
     }
     
-    //Mark: - 2. 셀 디자인 및 데이터 처리
+    // 2. 셀 디자인 및 데이터 처리
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "ShoppingTableViewCell", for: indexPath) as! ShoppingTableViewCell
@@ -84,7 +84,7 @@ class ShoppingTableViewController: UITableViewController {
         cell.likeButton.tag = indexPath.row
         cell.likeButton.tintColor = .black
         cell.likeButton.addTarget(self, action: #selector(likeButtonClicked), for: .touchUpInside)
-        //Mark: - cell 클릭 이벤트 색상 없애기
+        // cell 클릭 이벤트 색상 없애기
         cell.selectionStyle = .none
         
         return cell
@@ -99,8 +99,8 @@ class ShoppingTableViewController: UITableViewController {
         shoppingList[sender.tag].like.toggle()
         tableView.reloadRows(at: [IndexPath(row: sender.tag, section: 0)], with: .fade)
     }
-
-    //Mark: - 셀 삭제 기능
+    
+    // 셀 삭제 기능
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         return true
     }
