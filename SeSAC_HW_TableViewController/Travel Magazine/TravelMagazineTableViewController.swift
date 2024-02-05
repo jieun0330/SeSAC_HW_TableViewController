@@ -15,9 +15,8 @@ class TravelMagazineTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //Mark: - cell 사이 separator 없애기
+        // cell 사이 separator 없애기
         tableView.separatorStyle = .none
-        
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -37,17 +36,12 @@ class TravelMagazineTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: TravelMagazineTableViewCell.identifier, for: indexPath) as! TravelMagazineTableViewCell
-        
-        //Mark: - 이미지
         cell.travelImageView.kf.setImage(with: URL(string: mag[indexPath.row].photo_image))
-//        cell.travelImageView.image = UIImage(systemName: "heart")
         cell.travelImageView.contentMode = .scaleAspectFill
         cell.travelImageView.layer.cornerRadius = 16
-        //Mark: - 타이틀
         cell.titleLabel.text = mag[indexPath.row].title
         cell.titleLabel.font = UIFont.boldSystemFont(ofSize: 20)
         cell.titleLabel.numberOfLines = 2
-        //Mark: - 콘텐츠
         cell.contentLabel.text = mag[indexPath.row].subtitle
         cell.contentLabel.textColor = .gray
         cell.contentLabel.font = UIFont.boldSystemFont(ofSize: 12)
@@ -63,10 +57,9 @@ class TravelMagazineTableViewController: UITableViewController {
         let convertStr = myDateFormatter.string(from: convertDate!)
         
         cell.dateLabel.text = convertStr
-        
         cell.dateLabel.textColor = .gray
         cell.dateLabel.font = UIFont.systemFont(ofSize: 12)
-        //Mark: - cell 클릭 이벤트 색상 없애기
+        // cell 클릭 이벤트 색상 없애기
         cell.selectionStyle = .none
         
         return cell
