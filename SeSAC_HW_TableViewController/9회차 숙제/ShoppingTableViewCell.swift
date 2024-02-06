@@ -31,9 +31,9 @@ class ShoppingTableViewCell: UITableViewCell, ReusableProtocol {
     
     //Mark: - 찜 버튼
     // 다시 체크했을 때 돌아가기 기능
-    @IBAction func likeButtonClicked(_ sender: UIButton) {
-        sender.setImage(UIImage(systemName: "star.fill"), for: .normal)
-    }
+//    @IBAction func likeButtonClicked(_ sender: UIButton) {
+//        sender.setImage(UIImage(systemName: "star.fill"), for: .normal)
+//    }
 }
  
 
