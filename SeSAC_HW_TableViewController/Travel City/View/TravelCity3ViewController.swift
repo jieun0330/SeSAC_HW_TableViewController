@@ -21,6 +21,7 @@ class TravelCity3ViewController: UIViewController {
     @IBOutlet var domesticSegment: UISegmentedControl!
     
     let travel = CityInfo.city
+    
     var list: [City] = CityInfo.city {
         didSet {
             cityView.reloadData()
@@ -39,12 +40,10 @@ class TravelCity3ViewController: UIViewController {
         if sender.selectedSegmentIndex == 1 {
             let domestic = travel.filter( { $0.domestic_travel })
             list = domestic
-            print("국내:\(list.count)")
         }
         else if sender.selectedSegmentIndex == 2 {
             let abroad = travel.filter( { !$0.domestic_travel })
             list = abroad
-            print("해외:\(abroad)")
         } else {
             list = travel
         }
@@ -59,7 +58,7 @@ extension TravelCity3ViewController: UISearchBarDelegate {
             list = travel
         } else {
             for item in travel {
-                if item.city_name.contains(searchBar.text!) || item.city_explain.contains(searchBar.text!) || item.city_english_name.contains(searchBar.text!) {
+                if item.city_name.contains(searchBar.text!) || item.city_explain.contains(searchBar.text!) || item.city_english_name.contains(searchBar.text!.lowercased()) {
                     filterData.append(item)
                 }
             }

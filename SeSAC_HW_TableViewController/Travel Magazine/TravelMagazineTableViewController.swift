@@ -18,14 +18,9 @@ class TravelMagazineTableViewController: UITableViewController {
         // cell 사이 separator 없애기
         tableView.separatorStyle = .none
     }
-    
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
-        let vc = storyboard?.instantiateViewController(withIdentifier: MagazineDetailViewController.identifier) as! MagazineDetailViewController
-        
-        vc.urlString = mag[indexPath.row].link
-        navigationController?.pushViewController(vc, animated: true)
-    }
+}
+
+extension TravelMagazineTableViewController {
     
     // 1. 셀 갯수
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -69,4 +64,12 @@ class TravelMagazineTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 420
     }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        let vc = storyboard?.instantiateViewController(withIdentifier: MagazineDetailViewController.identifier) as! MagazineDetailViewController
+        
+        vc.urlString = mag[indexPath.row].link
+        navigationController?.pushViewController(vc, animated: true)
+    }    
 }
