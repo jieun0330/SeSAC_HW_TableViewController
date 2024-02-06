@@ -73,21 +73,11 @@ class ShoppingTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: ShoppingTableViewCell.identifier, for: indexPath) as! ShoppingTableViewCell
-        
-        
         let checkItem = !shoppingList[indexPath.row].check ? "checkmark.square" : "checkmark.square.fill"
         let likeItem = !shoppingList[indexPath.row].like ? "star" : "star.fill"
-        
-        
         cell.view.backgroundColor = .systemGray6
         cell.view.layer.cornerRadius = 16
-        
-        
         cell.checkButton.setImage(UIImage(systemName: checkItem), for: .normal)
-    
-        
-        
-        
         cell.checkButton.tag = indexPath.row
         cell.checkButton.tintColor = .black
         cell.checkButton.addTarget(self, action: #selector(checkButtonClicked), for: .touchUpInside)
@@ -104,18 +94,9 @@ class ShoppingTableViewController: UITableViewController {
     
     @objc func checkButtonClicked(_ sender: UIButton) {
         shoppingList[sender.tag].check.toggle()
-        
-//        if shoppingList[sender.tag].check == false {
-//            shoppingList[sender.tag].list./
-//                    shoppingListLabel.attributedText = shoppingListLabel.text?.strikeThrough()
-
-//        }
-        
         // 테이블뷰 전체를 reload할 필요는 없으니까 특정 행만 reloadRow를 해준다
         tableView.reloadRows(at: [IndexPath(row: sender.tag, section: 0)], with: .fade)
     }
-    
-
     
     @objc func likeButtonClicked(_ sender: UIButton) {
         shoppingList[sender.tag].like.toggle()
