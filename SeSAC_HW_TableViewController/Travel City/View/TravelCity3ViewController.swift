@@ -34,6 +34,9 @@ class TravelCity3ViewController: UIViewController {
         setupSegmentControl()
         configureView()
         setLayout()
+        
+//        print("allcases", domestic.allCases)
+//        print("enumerated", domestic.allCases.enumerated())
 
     }
     
@@ -91,15 +94,13 @@ extension TravelCity3ViewController: UISearchBarDelegate {
 extension TravelCity3ViewController {
     
     func setupSegmentControl() {
-        //Mark: - 모든 segment들을 지워준다
+        // 기본 세팅되어있는 세그먼트 값을 지워준다는걸까 -> 그런듯 아무것도 안보임
         domesticSegment.removeAllSegments()
-        //Mark: - 미리 선언해둔 Enum에 접근.모든케이스.enumerated()는 모든 인덱스를 리턴해준다
-        //Mark: - 인덱스에 접근하여 세그먼트에 문자열을 insert해준다
+        // 미리 선언해둔 Enum에 접근.모든케이스.enumerated()는 모든 인덱스를 리턴해준다
+        // 인덱스에 접근하여 세그먼트에 문자열을 insert해준다
         domestic.allCases.enumerated().forEach{ (index, section) in domesticSegment.insertSegment(withTitle: section.rawValue, at: index, animated: false)}
-        //Mark: - 초기 시작 상태를 0번째 인덱스로 두고 시작한다
+        // 초기 시작 상태를 0번째 인덱스로 두고 시작한다
         domesticSegment.selectedSegmentIndex = 0
-        //        if domesticSegment.section
-        //        print(segment)
     }
     
     func configureView() {
@@ -134,7 +135,6 @@ extension TravelCity3ViewController {
 
 extension TravelCity3ViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        print(list.count)
         return list.count
     }
     

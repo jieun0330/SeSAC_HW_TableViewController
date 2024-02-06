@@ -12,9 +12,7 @@ class TravelCity3CollectionViewCell: UICollectionViewCell, ReusableProtocol {
     @IBOutlet var imageView: UIImageView!
     @IBOutlet var titleLabel: UILabel!
     @IBOutlet var cityLabel: UILabel!
-    
-    static let identifier = "TravelCity3CollectionViewCell"
-    
+        
     override func awakeFromNib() {
         super.awakeFromNib()
         
