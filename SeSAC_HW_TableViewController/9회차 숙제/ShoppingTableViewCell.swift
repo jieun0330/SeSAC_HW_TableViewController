@@ -7,14 +7,13 @@
 
 import UIKit
 
-class ShoppingTableViewCell: UITableViewCell {
+class ShoppingTableViewCell: UITableViewCell, ReusableProtocol {
 
     @IBOutlet var view: UIView!
     @IBOutlet var checkButton: UIButton!
     @IBOutlet var shoppingListLabel: UILabel!
     @IBOutlet var likeButton: UIButton!
     
-    //Mark: - cell 사이 간격 주기
     override func layoutSubviews() {
         super.layoutSubviews()
         
@@ -23,9 +22,12 @@ class ShoppingTableViewCell: UITableViewCell {
 
     //Mark: - 체크 버튼
     // 다시 체크했을 때 돌아가기 기능
-    @IBAction func checkButtonClicked(_ sender: UIButton) {
-        sender.setImage(UIImage(systemName: "checkmark.square.fill"), for: .normal)
-    }
+//    @IBAction func checkButtonClicked(_ sender: UIButton) {
+//        sender.setImage(UIImage(systemName: "checkmark.square.fill"), for: .normal)
+//        shoppingListLabel.attributedText = shoppingListLabel.text?.strikeThrough()
+//        shoppingListLabel.strik
+//        shoppingList[sender.tag].list.strikeThrough()
+//    }
     
     //Mark: - 찜 버튼
     // 다시 체크했을 때 돌아가기 기능
@@ -33,3 +35,12 @@ class ShoppingTableViewCell: UITableViewCell {
         sender.setImage(UIImage(systemName: "star.fill"), for: .normal)
     }
 }
+ 
+
+//extension String {
+//    func strikeThrough() -> NSAttributedString {
+//        let attributeString: NSMutableAttributedString = NSMutableAttributedString(string: self)
+//        attributeString.addAttribute(NSAttributedString.Key.strikethroughStyle, value: NSUnderlineStyle.single.rawValue, range: NSMakeRange(0, attributeString.length))
+//        return attributeString
+//    }
+//}

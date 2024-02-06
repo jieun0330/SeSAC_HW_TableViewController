@@ -37,6 +37,8 @@ class ShoppingTableViewController: UITableViewController {
         sender.placeholder = "무엇을 구매하실 건가요?"
         sender.backgroundColor = .systemGray6
         sender.layer.cornerRadius = 10
+        // textField 자체에 왼쪽 뷰가 존재하는데, 그 뷰가 기본적으로 보이지 않는 모드로 되어있어서
+        // leftView를 항상 나타내서 padding 효과를 주게 한다고 함
         sender.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 16, height: 0))
         sender.leftViewMode = .always
     }
@@ -70,12 +72,22 @@ class ShoppingTableViewController: UITableViewController {
     // 2. 셀 디자인 및 데이터 처리
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "ShoppingTableViewCell", for: indexPath) as! ShoppingTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: ShoppingTableViewCell.identifier, for: indexPath) as! ShoppingTableViewCell
+        
+        
         let checkItem = !shoppingList[indexPath.row].check ? "checkmark.square" : "checkmark.square.fill"
         let likeItem = !shoppingList[indexPath.row].like ? "star" : "star.fill"
+        
+        
         cell.view.backgroundColor = .systemGray6
         cell.view.layer.cornerRadius = 16
+        
+        
         cell.checkButton.setImage(UIImage(systemName: checkItem), for: .normal)
+    
+        
+        
+        
         cell.checkButton.tag = indexPath.row
         cell.checkButton.tintColor = .black
         cell.checkButton.addTarget(self, action: #selector(checkButtonClicked), for: .touchUpInside)
@@ -92,8 +104,18 @@ class ShoppingTableViewController: UITableViewController {
     
     @objc func checkButtonClicked(_ sender: UIButton) {
         shoppingList[sender.tag].check.toggle()
+        
+//        if shoppingList[sender.tag].check == false {
+//            shoppingList[sender.tag].list./
+//                    shoppingListLabel.attributedText = shoppingListLabel.text?.strikeThrough()
+
+//        }
+        
+        // 테이블뷰 전체를 reload할 필요는 없으니까 특정 행만 reloadRow를 해준다
         tableView.reloadRows(at: [IndexPath(row: sender.tag, section: 0)], with: .fade)
     }
+    
+
     
     @objc func likeButtonClicked(_ sender: UIButton) {
         shoppingList[sender.tag].like.toggle()
