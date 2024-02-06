@@ -34,6 +34,7 @@ class TravelCity3ViewController: UIViewController {
         setupSegmentControl()
         configureView()
         setLayout()
+
     }
     
     @IBAction func changeSegmentValue(_ sender: UISegmentedControl) {
@@ -58,7 +59,7 @@ extension TravelCity3ViewController: UISearchBarDelegate {
             list = travel
         } else {
             for item in travel {
-                if item.city_name.contains(searchBar.text!) || item.city_explain.contains(searchBar.text!) || item.city_english_name.contains(searchBar.text!.lowercased()) {
+                if item.city_name.contains(searchBar.text!) || item.city_explain.contains(searchBar.text!) || item.city_english_name.lowercased().contains(searchBar.text!) {
                     filterData.append(item)
                 }
             }
@@ -66,20 +67,20 @@ extension TravelCity3ViewController: UISearchBarDelegate {
         }
     }
     
-    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        var filterData: [City] = []
-        
-        if searchBar.text == "" {
-            list = travel
-        } else {
-            for item in travel {
-                if item.city_name.contains(searchBar.text!) || item.city_explain.contains(searchBar.text!) || item.city_english_name.contains(searchBar.text!) {
-                    filterData.append(item)
-                }
-            }
-            list = filterData
-        }
-    }
+//    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+//        var filterData: [City] = []
+//        
+//        if searchBar.text == "" {
+//            list = travel
+//        } else {
+//            for item in travel {
+//                if item.city_name.contains(searchBar.text!) || item.city_explain.contains(searchBar.text!) || item.city_english_name.contains(searchBar.text!) {
+//                    filterData.append(item)
+//                }
+//            }
+//            list = filterData
+//        }
+//    }
     
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
         searchBar.text = ""
