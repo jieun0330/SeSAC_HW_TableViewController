@@ -18,7 +18,6 @@ class TravelDetailViewController: UIViewController, ReusableProtocol {
         super.viewDidLoad()
         
         configureView()
-
     }
     
     func configureView() {
@@ -42,16 +41,21 @@ extension TravelDetailViewController: UITableViewDelegate, UITableViewDataSource
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        
         if travelDetail.travel[indexPath.row].ad == false {
             let cell = tableView.dequeueReusableCell(withIdentifier: DetailTableViewCell.identifier, for: indexPath) as! DetailTableViewCell
             
             cell.title.text = travelDetail.travel[indexPath.row].title
             cell.descriptionLabel.text = travelDetail.travel[indexPath.row].description
             cell.travelImage.kf.setImage(with: URL(string: travelDetail.travel[indexPath.row].travel_image ?? ""))
-//            cell.likeButton
             
-            
+            if let grade = travelDetail.travel[indexPath.row].grade {
+                
+                let intGrade = Int(grade)
+                
+                for item in 0...intGrade - 1 {
+                    cell.stars[item].tintColor = .orange
+                }
+            }
             return cell
             
         } else {
@@ -61,11 +65,6 @@ extension TravelDetailViewController: UITableViewDelegate, UITableViewDataSource
             
             return cell
         }
-        
-//        if let intGrade = travelDetail.travel[indexPath.row].grade {
-//            
-//        }
-        
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -90,7 +89,5 @@ extension TravelDetailViewController: UITableViewDelegate, UITableViewDataSource
         } else {
             present(adView, animated: true)
         }
-        
     }
-    
 }
