@@ -37,5 +37,17 @@ class DetailTableViewCell: UITableViewCell, ReusableProtocol {
         
         likeButton.setImage(UIImage(systemName: "heart"), for: .normal)
         likeButton.tintColor = .white
+        likeButton.addTarget(self, action: #selector(likeButtonClicked), for: .touchUpInside)
+    }
+    
+    @objc func likeButtonClicked(_ sender: UIButton) {
+        sender.isSelected.toggle()
+        
+        if sender.isSelected {
+            likeButton.setImage(UIImage(systemName: "heart.fill"), for: .normal)
+        } else {
+            likeButton.setImage(UIImage(systemName: "heart"), for: .normal)
+        }
+        
     }
 }

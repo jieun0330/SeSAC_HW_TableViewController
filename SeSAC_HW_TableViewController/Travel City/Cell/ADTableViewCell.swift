@@ -27,9 +27,5 @@ class ADTableViewCell: UITableViewCell, ReusableProtocol {
         ad.clipsToBounds = true
         ad.textAlignment = .center
         ad.font = UIFont.systemFont(ofSize: 16)
-        
-            
     }
-
-    
 }

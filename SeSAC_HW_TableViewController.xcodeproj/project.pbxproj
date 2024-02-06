@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C23DC4422B724680000BEB58 /* TourScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C23DC4412B724680000BEB58 /* TourScreen.storyboard */; };
+		C23DC4442B7247A1000BEB58 /* ADScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C23DC4432B7247A1000BEB58 /* ADScreen.storyboard */; };
 		C263A8532B54FB9E006BB0E5 /* MagazineDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C263A8522B54FB9E006BB0E5 /* MagazineDetailViewController.swift */; };
 		C263A85B2B5509DF006BB0E5 /* Protocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = C263A85A2B5509DF006BB0E5 /* Protocol.swift */; };
 		C26708942B4BEBFA0069223A /* MagazineInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = C26708932B4BEBFA0069223A /* MagazineInfo.swift */; };
@@ -41,6 +43,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C23DC4412B724680000BEB58 /* TourScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TourScreen.storyboard; sourceTree = "<group>"; };
+		C23DC4432B7247A1000BEB58 /* ADScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ADScreen.storyboard; sourceTree = "<group>"; };
 		C263A8522B54FB9E006BB0E5 /* MagazineDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MagazineDetailViewController.swift; sourceTree = "<group>"; };
 		C263A85A2B5509DF006BB0E5 /* Protocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Protocol.swift; sourceTree = "<group>"; };
 		C26708932B4BEBFA0069223A /* MagazineInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MagazineInfo.swift; sourceTree = "<group>"; };
@@ -189,6 +193,8 @@
 			children = (
 				C26708C92B4D5E610069223A /* TravelCity3ViewController.swift */,
 				C2B3BDD12B4FF182004A8E9A /* TravelDetailViewController.swift */,
+				C23DC4412B724680000BEB58 /* TourScreen.storyboard */,
+				C23DC4432B7247A1000BEB58 /* ADScreen.storyboard */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -275,6 +281,8 @@
 				C293A6142B480B7E00B7D97B /* Assets.xcassets in Resources */,
 				C2B3BDE22B4FFBDD004A8E9A /* Detail.storyboard in Resources */,
 				C26708BE2B4D3F160069223A /* TravelCity2CollectionViewCell.xib in Resources */,
+				C23DC4442B7247A1000BEB58 /* ADScreen.storyboard in Resources */,
+				C23DC4422B724680000BEB58 /* TourScreen.storyboard in Resources */,
 				C2B3BDDA2B4FF1C6004A8E9A /* DetailTableViewCell.xib in Resources */,
 				C2B3BDDE2B4FF1D7004A8E9A /* ADTableViewCell.xib in Resources */,
 				C293A6122B480B7C00B7D97B /* Main.storyboard in Resources */,

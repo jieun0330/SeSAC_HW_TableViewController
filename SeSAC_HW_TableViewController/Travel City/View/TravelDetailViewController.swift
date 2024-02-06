@@ -17,39 +17,22 @@ class TravelDetailViewController: UIViewController, ReusableProtocol {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        configureView()
+
+    }
+    
+    func configureView() {
         navigationItem.title = "도시 상세 정보"
         
         travelDetailTableView.delegate = self
         travelDetailTableView.dataSource = self
         
-        let xib = UINib(nibName: "DetailTableViewCell", bundle: nil)
-        travelDetailTableView.register(xib, forCellReuseIdentifier: "DetailTableViewCell")
+        let xib = UINib(nibName: DetailTableViewCell.identifier, bundle: nil)
+        travelDetailTableView.register(xib, forCellReuseIdentifier: DetailTableViewCell.identifier)
         
-        let xib2 = UINib(nibName: "ADTableViewCell", bundle: nil)
-        travelDetailTableView.register(xib2, forCellReuseIdentifier: "ADTableViewCell")
+        let xib2 = UINib(nibName: ADTableViewCell.identifier, bundle: nil)
+        travelDetailTableView.register(xib2, forCellReuseIdentifier: ADTableViewCell.identifier)
     }
-}
-
-extension TravelDetailViewController {
-    
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        
-        if travelDetail.travel[indexPath.row].ad == false {
-            return 200
-        } else {
-            return 80
-        }
-    }
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        let destinationSB = UIStoryboard(name: <#T##String#>, bundle: <#T##Bundle?#>)
-    }
-    
-//    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-//        let detailSB = UIStoryboard(name: "Detail", bundle: nil)
-//        let detailVC = detailSB.instantiateViewController(identifier: "TravelDetailViewController") as! TravelDetailViewController
-//        navigationController?.pushViewController(detailVC, animated: true)
-//    }
 }
 
 extension TravelDetailViewController: UITableViewDelegate, UITableViewDataSource {
@@ -58,7 +41,7 @@ extension TravelDetailViewController: UITableViewDelegate, UITableViewDataSource
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-
+        
         
         if travelDetail.travel[indexPath.row].ad == false {
             let cell = tableView.dequeueReusableCell(withIdentifier: DetailTableViewCell.identifier, for: indexPath) as! DetailTableViewCell
@@ -66,6 +49,8 @@ extension TravelDetailViewController: UITableViewDelegate, UITableViewDataSource
             cell.title.text = travelDetail.travel[indexPath.row].title
             cell.descriptionLabel.text = travelDetail.travel[indexPath.row].description
             cell.travelImage.kf.setImage(with: URL(string: travelDetail.travel[indexPath.row].travel_image ?? ""))
+//            cell.likeButton.addTarget(self, action: #selector(likeButtonClicked), for: .touchUpInside)
+            
             
             return cell
             
@@ -77,4 +62,34 @@ extension TravelDetailViewController: UITableViewDelegate, UITableViewDataSource
             return cell
         }
     }
+    
+//    @objc func likeButtonClicked() {
+//        
+//    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        
+        if travelDetail.travel[indexPath.row].ad == false {
+            return 200
+        } else {
+            return 80
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        let tourStoryboard = UIStoryboard(name: "TourScreen", bundle: nil)
+        let tourView = tourStoryboard.instantiateViewController(withIdentifier: "TourScreen")
+        
+        let adStoryboard = UIStoryboard(name: "ADScreen", bundle: nil)
+        let adView = adStoryboard.instantiateViewController(withIdentifier: "ADScreen")
+        
+        if travelDetail.travel[indexPath.row].ad == false {
+            navigationController?.pushViewController(tourView, animated: true)
+        } else {
+            present(adView, animated: true)
+        }
+        
+    }
+    
 }
