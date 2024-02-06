@@ -12,10 +12,13 @@ class DetailTableViewCell: UITableViewCell, ReusableProtocol {
     @IBOutlet var title: UILabel!
     @IBOutlet var descriptionLabel: UILabel!
     @IBOutlet var travelImage: UIImageView!
-    @IBOutlet var starRate: UILabel!
+    
+    @IBOutlet var starStack: UIStackView!
+    @IBOutlet var stars: [UIImageView]!
+    
     @IBOutlet var saveLabel: UILabel!
     @IBOutlet var likeButton: UIButton!
-    
+        
     override func awakeFromNib() {
         super.awakeFromNib()
         
@@ -27,9 +30,26 @@ class DetailTableViewCell: UITableViewCell, ReusableProtocol {
         travelImage.contentMode = .scaleAspectFill
         travelImage.layer.cornerRadius = 8
         
-        starRate.text = "별점"
-        starRate.font = UIFont.systemFont(ofSize: 10)
-        starRate.textColor = .systemGray2
+        starStack.axis = .horizontal
+        starStack.distribution = .fillEqually
+        starStack.spacing = 2
+        
+        for index in 0...4 {
+            stars[index].image = UIImage(systemName: "star.fill")
+            stars[index].tintColor = .lightGray
+            
+        }
+        
+        
+        
+        
+//        starRate.image = UIImage(systemName: "star")
+//        starRate.tintColor = .lightGray
+        
+        
+//        starRate.text = "별점"
+//        starRate.font = UIFont.systemFont(ofSize: 10)
+//        starRate.textColor = .systemGray2
         
         saveLabel.text = "저장"
         saveLabel.font = UIFont.systemFont(ofSize: 10)

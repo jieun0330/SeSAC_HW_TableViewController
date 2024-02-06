@@ -145,6 +145,7 @@ extension TravelCity3ViewController: UICollectionViewDelegate, UICollectionViewD
         cell.titleLabel.text = "\(list[indexPath.row].city_name) | \(list[indexPath.row].city_english_name)"
         cell.cityLabel.text = list[indexPath.row].city_explain
         
+        
         return cell
     }
 }

@@ -49,7 +49,7 @@ extension TravelDetailViewController: UITableViewDelegate, UITableViewDataSource
             cell.title.text = travelDetail.travel[indexPath.row].title
             cell.descriptionLabel.text = travelDetail.travel[indexPath.row].description
             cell.travelImage.kf.setImage(with: URL(string: travelDetail.travel[indexPath.row].travel_image ?? ""))
-//            cell.likeButton.addTarget(self, action: #selector(likeButtonClicked), for: .touchUpInside)
+//            cell.likeButton
             
             
             return cell
@@ -61,11 +61,12 @@ extension TravelDetailViewController: UITableViewDelegate, UITableViewDataSource
             
             return cell
         }
+        
+//        if let intGrade = travelDetail.travel[indexPath.row].grade {
+//            
+//        }
+        
     }
-    
-//    @objc func likeButtonClicked() {
-//        
-//    }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         
