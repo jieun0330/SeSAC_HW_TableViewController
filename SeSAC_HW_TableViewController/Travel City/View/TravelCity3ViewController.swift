@@ -34,10 +34,6 @@ class TravelCity3ViewController: UIViewController {
         setupSegmentControl()
         configureView()
         setLayout()
-        
-//        print("allcases", domestic.allCases)
-//        print("enumerated", domestic.allCases.enumerated())
-
     }
     
     @IBAction func changeSegmentValue(_ sender: UISegmentedControl) {
@@ -69,21 +65,6 @@ extension TravelCity3ViewController: UISearchBarDelegate {
             list = filterData
         }
     }
-    
-//    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-//        var filterData: [City] = []
-//        
-//        if searchBar.text == "" {
-//            list = travel
-//        } else {
-//            for item in travel {
-//                if item.city_name.contains(searchBar.text!) || item.city_explain.contains(searchBar.text!) || item.city_english_name.contains(searchBar.text!) {
-//                    filterData.append(item)
-//                }
-//            }
-//            list = filterData
-//        }
-//    }
     
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
         searchBar.text = ""
@@ -126,11 +107,6 @@ extension TravelCity3ViewController {
         cityView.collectionViewLayout = layout
     }
     
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let detailSB = UIStoryboard(name: "Detail", bundle: nil)
-        let detailVC = detailSB.instantiateViewController(identifier: TravelDetailViewController.identifier) as! TravelDetailViewController
-        navigationController?.pushViewController(detailVC, animated: true)
-    }
 }
 
 extension TravelCity3ViewController: UICollectionViewDelegate, UICollectionViewDataSource {
@@ -145,7 +121,12 @@ extension TravelCity3ViewController: UICollectionViewDelegate, UICollectionViewD
         cell.titleLabel.text = "\(list[indexPath.row].city_name) | \(list[indexPath.row].city_english_name)"
         cell.cityLabel.text = list[indexPath.row].city_explain
         
-        
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let detailSB = UIStoryboard(name: "Detail", bundle: nil)
+        let detailVC = detailSB.instantiateViewController(identifier: TravelDetailViewController.identifier) as! TravelDetailViewController
+        navigationController?.pushViewController(detailVC, animated: true)
     }
 }
