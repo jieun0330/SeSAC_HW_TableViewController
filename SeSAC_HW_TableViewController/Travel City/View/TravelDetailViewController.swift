@@ -78,16 +78,17 @@ extension TravelDetailViewController: UITableViewDelegate, UITableViewDataSource
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        let tourStoryboard = UIStoryboard(name: "TourScreen", bundle: nil)
-        let tourView = tourStoryboard.instantiateViewController(withIdentifier: "TourScreen")
-        
-        let adStoryboard = UIStoryboard(name: "ADScreen", bundle: nil)
-        let adView = adStoryboard.instantiateViewController(withIdentifier: "ADScreen")
-        
+        let detailStoryboard = UIStoryboard(name: "DetailScreen", bundle: nil)
+        let detailView = detailStoryboard.instantiateViewController(withIdentifier: "DetailScreen") as! DetailViewController
+                
         if travelDetail.travel[indexPath.row].ad == false {
-            navigationController?.pushViewController(tourView, animated: true)
+            detailView.navigationItem.title = "관광지 화면"
+            detailView.detail = "관광지 화면"
+            navigationController?.pushViewController(detailView, animated: true)
         } else {
-            present(adView, animated: true)
+            detailView.navigationItem.title = "광고 화면"
+            detailView.detail = "광고 화면"
+            navigationController?.pushViewController(detailView, animated: true)
         }
     }
 }
