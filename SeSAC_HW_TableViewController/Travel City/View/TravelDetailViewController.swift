@@ -48,14 +48,20 @@ extension TravelDetailViewController: UITableViewDelegate, UITableViewDataSource
             cell.descriptionLabel.text = travelDetail.travel[indexPath.row].description
             cell.travelImage.kf.setImage(with: URL(string: travelDetail.travel[indexPath.row].travel_image ?? ""))
             
+            // 별점 구현
             if let grade = travelDetail.travel[indexPath.row].grade {
-                
                 let intGrade = Int(grade)
-                
                 for item in 0...intGrade - 1 {
                     cell.stars[item].tintColor = .orange
                 }
             }
+            
+            // 저장 갯수 구현
+            let numberFormatter: NumberFormatter = NumberFormatter()
+            numberFormatter.numberStyle = .decimal
+            let result: String = numberFormatter.string(for: travelDetail.travel[indexPath.row].save)!
+            cell.saveLabel.text = "저장 \(result)"
+            
             return cell
             
         } else {
@@ -80,7 +86,7 @@ extension TravelDetailViewController: UITableViewDelegate, UITableViewDataSource
         
         let detailStoryboard = UIStoryboard(name: "DetailScreen", bundle: nil)
         let detailView = detailStoryboard.instantiateViewController(withIdentifier: "DetailScreen") as! DetailViewController
-                
+        
         if travelDetail.travel[indexPath.row].ad == false {
             detailView.navigationItem.title = "관광지 화면"
             detailView.detail = "관광지 화면"

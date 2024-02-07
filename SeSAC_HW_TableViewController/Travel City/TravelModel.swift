@@ -16,6 +16,7 @@ struct Travel {
     var ad: Bool
 }
 
+
 struct TravelInfo {
     let travel: [Travel] = [
         Travel(title: "하나우마 베이",

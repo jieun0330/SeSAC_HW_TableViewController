@@ -13,7 +13,6 @@ class DetailViewController: UIViewController {
     @IBOutlet var detailLabel: UILabel!
     var detail: String = "전달받을 공간"
     
-
     override func viewDidLoad() {
         super.viewDidLoad()
         

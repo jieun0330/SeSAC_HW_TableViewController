@@ -39,7 +39,6 @@ class DetailTableViewCell: UITableViewCell, ReusableProtocol {
             stars[index].tintColor = .lightGray
         }
         
-        saveLabel.text = "저장"
         saveLabel.font = UIFont.systemFont(ofSize: 10)
         saveLabel.textColor = .systemGray2
         
