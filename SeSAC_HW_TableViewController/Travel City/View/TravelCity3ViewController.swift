@@ -20,8 +20,6 @@ class TravelCity3ViewController: UIViewController {
     @IBOutlet var citySearchBar: UISearchBar!
     @IBOutlet var domesticSegment: UISegmentedControl!
     
-    let travel = CityInfo.city
-    
     var list: [City] = CityInfo.city {
         didSet {
             cityView.reloadData()
@@ -38,14 +36,14 @@ class TravelCity3ViewController: UIViewController {
     
     @IBAction func changeSegmentValue(_ sender: UISegmentedControl) {
         if sender.selectedSegmentIndex == 1 {
-            let domestic = travel.filter( { $0.domestic_travel })
+            let domestic = CityInfo.city.filter( { $0.domestic_travel })
             list = domestic
         }
         else if sender.selectedSegmentIndex == 2 {
-            let abroad = travel.filter( { !$0.domestic_travel })
+            let abroad = CityInfo.city.filter( { !$0.domestic_travel })
             list = abroad
         } else {
-            list = travel
+            list = CityInfo.city
         }
     }
 }
@@ -55,9 +53,9 @@ extension TravelCity3ViewController: UISearchBarDelegate {
         var filterData: [City] = []
         
         if searchBar.text == "" {
-            list = travel
+            list = CityInfo.city
         } else {
-            for item in travel {
+            for item in CityInfo.city {
                 if item.city_name.contains(searchBar.text!) || item.city_explain.contains(searchBar.text!) || item.city_english_name.lowercased().contains(searchBar.text!) {
                     filterData.append(item)
                 }
@@ -68,7 +66,7 @@ extension TravelCity3ViewController: UISearchBarDelegate {
     
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
         searchBar.text = ""
-        list = travel
+        list = CityInfo.city
     }
 }
 
