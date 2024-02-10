@@ -7,40 +7,41 @@
 
 import UIKit
 
-enum Setting: String, CaseIterable {
-    case total
-    case personal
-    case others
-    case qna
-    
-    var title: String {
-        switch self {
-        case .total:
-            return "전체 설정"
-        case .personal:
-            return "개인 설정"
-        case .others:
-            return "기타"
-        case .qna:
-            return "Q&A"
-        }
-    }
-    
-    var cellData: [String] {
-        switch self {
-        case .total:
-            return ["공지사항", "실험실", "버전 정보"]
-        case .personal:
-            return ["개인/보안", "알림", "채팅", "멀티 프로필"]
-        case .others:
-            return ["도움말"]
-        case .qna:
-            return ["문의하기"]
-        }
-    }
-}
-
 class SettingTableViewController: UITableViewController {
+    
+    // 다른데서 쓸일이 없다면 안에다가 넣을 수 있다
+    enum Setting: String, CaseIterable {
+        case total
+        case personal
+        case others
+        case qna
+        
+        var title: String {
+            switch self {
+            case .total:
+                return "전체 설정"
+            case .personal:
+                return "개인 설정"
+            case .others:
+                return "기타"
+            case .qna:
+                return "Q&A"
+            }
+        }
+        
+        var cellData: [String] {
+            switch self {
+            case .total:
+                return ["공지사항", "실험실", "버전 정보"]
+            case .personal:
+                return ["개인/보안", "알림", "채팅", "멀티 프로필"]
+            case .others:
+                return ["도움말"]
+            case .qna:
+                return ["문의하기"]
+            }
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
