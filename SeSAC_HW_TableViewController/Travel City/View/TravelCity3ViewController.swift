@@ -8,11 +8,26 @@
 import UIKit
 import Kingfisher
 
-enum domestic: String, CaseIterable {
+enum segmentCase: String, CaseIterable {
     case all = "모두"
     case domestic = "국내"
     case overseas = "해외"
+    
+    var index: Int {
+        switch self {
+        case .all:
+            return 0
+        case .domestic:
+            return 1
+        case .overseas:
+            return 2
+        }
+    }
 }
+
+// 열거형 타입을 갖고있는 프로퍼티
+var userSelect: segmentCase = .all
+
 
 class TravelCity3ViewController: UIViewController {
     
@@ -32,14 +47,17 @@ class TravelCity3ViewController: UIViewController {
         setupSegmentControl()
         configureView()
         setLayout()
+        
+        
+        
     }
     
     @IBAction func changeSegmentValue(_ sender: UISegmentedControl) {
-        if sender.selectedSegmentIndex == 1 {
+        if sender.selectedSegmentIndex == segmentCase.domestic.index {
             let domestic = CityInfo.city.filter( { $0.domestic_travel })
             list = domestic
         }
-        else if sender.selectedSegmentIndex == 2 {
+        else if sender.selectedSegmentIndex == segmentCase.overseas.index {
             let abroad = CityInfo.city.filter( { !$0.domestic_travel })
             list = abroad
         } else {
@@ -77,7 +95,7 @@ extension TravelCity3ViewController {
         domesticSegment.removeAllSegments()
         // 미리 선언해둔 Enum에 접근.모든케이스.enumerated()는 모든 인덱스를 리턴해준다
         // 인덱스에 접근하여 세그먼트에 문자열을 insert해준다
-        domestic.allCases.enumerated().forEach{ (index, section) in domesticSegment.insertSegment(withTitle: section.rawValue, at: index, animated: false)}
+        segmentCase.allCases.enumerated().forEach{ (index, section) in domesticSegment.insertSegment(withTitle: section.rawValue, at: index, animated: false)}
         // 초기 시작 상태를 0번째 인덱스로 두고 시작한다
         domesticSegment.selectedSegmentIndex = 0
     }
